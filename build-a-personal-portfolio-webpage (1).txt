@@ -1,0 +1,260 @@
+** start of undefined **
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+
+ 
+
+  <body>
+     <navbar id="navbar" class="nav">
+  <ul class="nav-links" attribute="no">
+    <li><a class="nav-list" id="profile-link" target="_blank" href="#weclome-section">About</a></li>
+    <li><a class="nav-list" href="#projects">Projects</a></li>
+    <li><a class="nav-list" href="#videos-div">Videos</a></li>
+    <li><a class="nav-list" href="#contact">Contact</a></li>
+
+  </ul>
+  </navbar>
+    <main>
+      <section  id="welcome-section">
+        <div id="name-div">
+        <h1 id="name">Dominick Pescetto</h1>
+        <p id="name-caption"><i>truck driver, programmer, and bodybuilder.</i> </p>
+      </div>
+      </section>
+<h1 >Coding Projects</h1>
+      <section id="projects">
+        
+       <div class="projects">
+         
+
+         <div class="project-img">
+           <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form"><img src="https://i.imgur.com/jP5gkP0.png" title="source: imgur.com" />
+           <h2 class="project-tile">Survey Form</h2>
+          </div>
+          </a>
+
+        
+         <div class="project-img">
+           <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page"><img src="https://i.imgur.com/ZuLXPvx.png" title="source: imgur.com" />
+           <h2>Tribute Page</h2>
+          </div>
+         </a>
+        <div class="project-img">
+         <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page"><img src="https://i.imgur.com/pGsZPLk.png" title="source: imgur.com" />
+           
+           <h2>Technical Documentation</h2>
+          </div>
+          </a>
+
+          
+         <div class="project-img">
+        <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page"><img src="https://i.imgur.com/tx7i2TQ.png" title="source: imgur.com" />
+           <h2>Product Page</h2>
+          </div>
+          </a>
+
+      </section>
+<h2 class="videos-head">Videos</h2>
+      <section class="videos">
+
+
+        <div class="videos-div">
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/AfA7wZBlfyU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+      <div class="videos-div">
+        
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/HEIOayBoKdc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+       <div class="videos-div">
+       
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/997RB-6wiwk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      </div>
+
+
+
+      </section>
+      
+      <section id="contact">
+        <div id="contact-div">
+          <div></div>
+          <h1 id="quote-text"> Learning every day.</h1>
+
+          <h3 id="quote-text-caption"><i>Never stop.</i></h3>
+           
+           <section id="contact-links">
+            <link class="contact-link-id" id="youtube"><a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">Youtube</a></link>
+<div></div>
+           <link class="contact-link-id" id="github"><a href="https://github.com/dominick253?tab=repositories">Github</a></link>
+<div></div>
+        <link class="contact-link-id" id="freecodecamp"><a href="https://www.freecodecamp.org/certification/Dominick253/responsive-web-design">FreeCodeCamp-Certifications</a></link>
+
+        </section>
+
+
+        </div>
+
+      </section> 
+      
+
+
+    </main>
+  </body>
+</html>
+
+
+
+** end of undefined **
+
+** start of undefined **
+
+navbar {
+  width: 110%;
+  margin-top: -10px;
+   position: fixed;
+   background-color: black;
+   display: flex; 
+    z-index: 2;
+   
+}
+#name-caption {
+  position: absolute;
+  top: 57%;
+  left: 45%;
+  font-size: 20px;
+  color: white;
+
+
+}
+
+h1, h2 {
+  text-align: center;
+  color: white;
+}
+#name {
+  position: absolute;
+  top: 45%;
+  left: 30%;
+  margin-top: 75px;
+  font-size: 75px;
+}
+
+body {
+  width: 100%;
+  height: 100%;
+  
+}
+#welcome-section {
+  margin:0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#4cc9f0, #4361ee)
+}
+li {
+  margin-right: 5%
+}
+ul {
+  width: 100%;
+  height: 10%;
+  display: flex;
+  float: right; 
+  list-style-type: none;
+  margin-left: 50vw;
+}
+a.nav-list{
+  color: white;
+}
+a.project-link1 {
+  color: black;
+}
+a.project-link1:hover {
+  color:red;
+}
+a:hover {
+
+  background-color: lightblue;
+
+}
+@media screen and (max-width: 900px) {
+  p {
+    font-size: .7rem;
+    text-align: center;
+  }
+  #name {
+    font-size: 50px;
+  }
+} 
+.videos {
+  display: inline;
+  max-width: 100%
+}
+.videos-div {
+ display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.project-img {
+  display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+@media screen and (max-width: 600px) {
+  p {
+    font-size: .7rem;
+    text-align: center;
+  }
+  #name {
+    font-size: 40px;
+  }
+} 
+@media screen and (min-width: 900px) {
+  p {
+    font-size: .7rem;
+    text-align: center;
+  }
+  #name {
+    font-size: 75px;
+    margin-top: 1%;
+  }
+} 
+h3 {
+  text-align: center;
+}
+#contact {
+  background: linear-gradient(0deg, #4361ee, #4cc9f0)
+}
+#contact-links {
+  margin-left: 70%;
+  padding-bottom: 20px
+  
+  
+}
+#quote-text {
+  padding-top: 20px;
+}
+
+#quote-text-caption {
+  margin-top: -20px;
+}
+.contact-link-id {
+  margin-top: 10px;
+}
+main {
+  background: linear-gradient( #4361ee, #4cc9f0)
+}
+
+
+
+** end of undefined **
+
