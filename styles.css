@@ -133,3 +133,7 @@ main {
   background: linear-gradient( #4361ee, #4cc9f0)
 }
 
+#projects {
+  position: relative;
+  
+}
