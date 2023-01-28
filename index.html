@@ -13,36 +13,38 @@
 
   <body>
     <main>
+
      <navbar id="navbar" class="nav">
   <ul class="nav-links" attribute="no">
-    <li><a class="nav-list" href="#name-and-caption">About</a></li>
+    <li><a class="nav-list" href="#name-div-parent">About</a></li>
     <li><a class="nav-list" href="#projects">Projects</a></li>
     <li><a class="nav-list" href="#videos-div">Videos</a></li>
-    <li><a class="nav-list" href="#contact">Contact</a></li>
-
+    <li><a class="nav-list" href="#contact-div">Contact</a></li>
   </ul>
   </navbar>
     
       
-        <section id="welcome-section">
-          <div id="name-and-caption"> 
-        <h1 id="name">Dominick Pescetto</h1>
-        <p id="name-caption"><i>truck driver, programmer, and bodybuilder.</i> </p>
-      </div>
-        </section>
-      
-<h1 >Coding Projects</h1>
-      <section id="projects">
         
-       <div class="projects">
+      <div id="name-div-parent"> 
+        <div id="name-div-child">
+          <h1 id="name">Dominick Pescetto</h1>
+          <p id="name-caption"><i>truck driver, aspiring programmer, and bodybuilder.</i> </p>
+        </div>
+      </div>
+      
+      
+<h2 >Coding Projects</h2>
+      
+        
+       <div id="projects">
          
 
          <div class="project-img">
            <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form"><img src="https://i.imgur.com/jP5gkP0.png" title="source: imgur.com" />
            <h2 class="project-tile">Survey Form</h2>
-          </div>
+          
           </a>
-
+        </div>
         
          <div class="project-img">
            <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page"><img src="https://i.imgur.com/ZuLXPvx.png" title="source: imgur.com" />
@@ -51,11 +53,10 @@
          </a>
         <div class="project-img">
          <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page"><img src="https://i.imgur.com/pGsZPLk.png" title="source: imgur.com" />
-           
            <h2>Technical Documentation</h2>
           </div>
           </a>
-
+        
           
          <div class="project-img">
         <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page"><img src="https://i.imgur.com/tx7i2TQ.png" title="source: imgur.com" />
@@ -63,9 +64,10 @@
           </div>
           </a>
 
-      </section>
+          </div>
+      
 <h2 class="videos-head">Videos</h2>
-      <section class="videos">
+      
 
 
         <div id="videos-div" class="videos-div">
@@ -85,28 +87,32 @@
 
 
 
-      </section>
       
-      <section id="contact">
+      
+     
         <div id="contact-div">
-          <div></div>
-          <h1 id="quote-text"> Learning every day.</h1>
+          
+          <h2 id="quote-text"> Learning every day.</h2>
 
           <h3 id="quote-text-caption"><i>Never stop.</i></h3>
            
-           <section id="contact-links">
+           <div id="contact-links">
+            <ul>
+             <li> 
             <link class="contact-link-id" id="youtube"><a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">Youtube</a></link>
-<div></div>
+              </li>
            <link class="contact-link-id" id="github"><a href="https://github.com/dominick253?tab=repositories">Github</a></link>
-<div></div>
+              <li>
         <link class="contact-link-id" id="freecodecamp"><a href="https://www.freecodecamp.org/certification/Dominick253/responsive-web-design">FreeCodeCamp-Certifications</a></link>
-
-        </section>
+              </li>
+            </ul>    
+      </div>
+        
 
 
         </div>
 
-      </section> 
+      
       
 
 
