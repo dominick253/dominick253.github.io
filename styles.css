@@ -125,7 +125,7 @@ navbar {
     margin-top: 10px;
   }
   main {
-    
+    width: 100vw;
     background: linear-gradient( #4361ee, #4cc9f0)
   }
   
