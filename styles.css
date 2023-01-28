@@ -1,8 +1,11 @@
 
+
 body {
   width: 100%;
-  margin-left: 0;
+  margin: 0;
+ 
   }
+
 
   main {
     width: 100%;
@@ -35,6 +38,7 @@ body {
   justify-content: center;
 }
     
+
   li {
   padding: 20px;
   }
@@ -46,8 +50,12 @@ body {
   a:hover {
   background-color: white;
   color: black; 
+
   }
   
+
+
+
 #name-div-parent {
   width: 100%;
   height: 100vh;
@@ -64,24 +72,33 @@ body {
 
 #name::first-letter {
     font-size: 2em;
-    font-weight: bold;   
+    font-weight: bold;
+    
 }
 
+ 
 #projects {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  
+
 }
+
 
   .project-img {
     width: 70%; 
     max-width: 500px; 
-    border-style: 20px solid black;
+    text-align: center;
+    
     }
+ 
+  
 
   iframe {
-    padding: 10px; 
+    padding: 10px;
+  
   }
     
     .videos-div {
@@ -91,6 +108,12 @@ body {
     width: 100%;
     height: auto;
     }
+
+
+
+
+
+
 
 #contact-div {
   background: linear-gradient(0deg, #4361ee, #4cc9f0)
@@ -103,27 +126,40 @@ body {
   }
   #contact-links a {
     color: white;
+    font-size: 2rem;
   }
   #contact-links a:hover {
     color: black;
   }
 
+
     #quote-text {
       padding-top: 20px;
       }
       
+      
+
+
+
+
 
   @media only screen and (max-width: 480px) {
   
+ 
+
     #navbar {
+  
   margin-left: 0;
   }
-      
+ 
+  
+   
     li {
       padding: 5px;
       font-size: .7rem;
       }
    
+    
     img {
     max-width: 300px;
     }
