@@ -1,139 +1,140 @@
+
 navbar {
-  width: 110%;
-  margin-top: -10px;
-   position: fixed;
-   background-color: black;
-   display: flex; 
-    z-index: 2;
-   
-}
+    width: 110%;
+    margin-top: -30px;
+    margin-left: -30px;
+     position: fixed;
+     background-color: black;
+     display: flex; 
+      z-index: 2;
+     
+  }
+  
+  
+  h1, h2 {
+    text-align: center;
+    color: white;
+  }
+  
+  
+  body {
+    width: 100%;
+    height: 100%;
+    margin-left: -10px;
+    
+  }
+  #welcome-section {
+    position: relative;
+    width: 100vw;
+    height: 100vh;
+    background: linear-gradient(#4cc9f0, #4361ee)
+  }
+  li {
+    margin-right: 5%
+  }
+  ul {
+    width: 100%;
+    height: 10%;
+    display: flex;
+    float: right; 
+    list-style-type: none;
+    margin-left: 50vw;
+  }
+  a.nav-list{
+    color: white;
+  }
+  a.project-link1 {
+    color: black;
+  }
+  a.project-link1:hover {
+    color:red;
+  }
+  a:hover {
+  
+    background-color: lightblue;
+  
+  }
+  @media screen and (max-width: 900px) {
+    p {
+      font-size: .7rem;
+      text-align: center;
+    }
+    #name {
+      font-size: 50px;
+    }
+  } 
+  .videos {
+    display: inline;
+    max-width: 100%
+  }
+  .videos-div {
+   display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  .project-img {
+    display: flex;
+      justify-content: center;
+      align-items: center;
+  }
+  
+  @media screen and (max-width: 600px) {
+    p {
+      font-size: .7rem;
+      text-align: center;
+    }
+    #name {
+      font-size: 40px;
+    }
+  } 
+  @media screen and (min-width: 900px) {
+    p {
+      font-size: .7rem;
+      text-align: center;
+    }
+    #name {
+      font-size: 75px;
+      margin-top: 1%;
+
+    
+    }
+    #name-caption{
+      font-size: 28px;
+    }
+  } 
+  h3 {
+    text-align: center;
+  }
+  #contact {
+    background: linear-gradient(0deg, #4361ee, #4cc9f0)
+  }
+  #contact-links {
+    margin-left: 70%;
+    padding-bottom: 20px
+    
+    
+  }
+  #quote-text {
+    padding-top: 20px;
+  }
+  
+  #quote-text-caption {
+    margin-top: -20px;
+  }
+  .contact-link-id {
+    margin-top: 10px;
+  }
+  main {
+    
+    background: linear-gradient( #4361ee, #4cc9f0)
+  }
+  
+  #name-and-caption {
+    position: absolute;
+    padding-top: 45vh;
+    padding-left: 40%;
+  }
 #name-caption {
-  position: absolute;
-  top: 57vh;
-  left: 45vw;
-  font-size: 20px;
   color: white;
-
-
-}
-
-h1, h2 {
-  text-align: center;
-  color: white;
-}
-#name {
-  position: absolute;
-  top: 45vh;
-  left: 30vw;
- 
-}
-
-body {
-  width: 100%;
-  height: 100%;
-  
-}
-#welcome-section {
-  
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(#4cc9f0, #4361ee)
-}
-li {
-  margin-right: 5%
-}
-ul {
-  width: 100%;
-  height: 10%;
-  display: flex;
-  float: right; 
-  list-style-type: none;
-  margin-left: 50vw;
-}
-a.nav-list{
-  color: white;
-}
-a.project-link1 {
-  color: black;
-}
-a.project-link1:hover {
-  color:red;
-}
-a:hover {
-
-  background-color: lightblue;
-
-}
-@media screen and (max-width: 900px) {
-  p {
-    font-size: .7rem;
-    text-align: center;
-  }
-  #name {
-    font-size: 50px;
-  }
-} 
-.videos {
-  display: inline;
-  max-width: 100%
-}
-.videos-div {
- display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.project-img {
-  display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-@media screen and (max-width: 600px) {
-  p {
-    font-size: .7rem;
-    text-align: center;
-  }
-  #name {
-    font-size: 40px;
-  }
-} 
-@media screen and (min-width: 900px) {
-  p {
-    font-size: .7rem;
-    text-align: center;
-  }
-  #name {
-    font-size: 75px;
-    margin-top: 1%;
-  }
-} 
-h3 {
-  text-align: center;
-}
-#contact {
-  background: linear-gradient(0deg, #4361ee, #4cc9f0)
-}
-#contact-links {
-  margin-left: 70%;
-  padding-bottom: 20px
-  
-  
-}
-#quote-text {
-  padding-top: 20px;
-}
-
-#quote-text-caption {
-  margin-top: -20px;
-}
-.contact-link-id {
-  margin-top: 10px;
-}
-main {
-  background: linear-gradient( #4361ee, #4cc9f0)
-}
-
-#projects {
-  position: relative;
   
 }
