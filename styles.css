@@ -3,12 +3,9 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #f0f0f0;
+    background-color: #222; /* darker background */
 }
-/* body * {a
-    border: 1px solid red;
-  }  */
-  
+
 main {
     max-width: 1200px;
     margin: 0 auto;
@@ -20,12 +17,12 @@ h2,
 h3 {
     display:flex;
     justify-content: center;
-    color: #333;
+    color: #ddd; /* lighter color for headers */
 }
 
 a {
     text-decoration: none;
-    color: #333;
+    color: #ddd; /* lighter color for links */
 }
 
 /* Navbar styling */
@@ -33,7 +30,7 @@ a {
     display: flex;
     justify-content: center;
     /* Add this */
-    background-color: #333;
+    background-color: #0000008c;
     color: #f0f0f0;
     padding: 10px;
     list-style-type: none;
@@ -65,8 +62,7 @@ a {
     justify-content: center;
     align-items: center;
     height: 100vh;
-    /* Taking up the whole screen height */
-    background-color: #fafafa;
+    background-color: #333; /* darker background */
     margin-bottom: 20px;
 }
 
@@ -76,7 +72,7 @@ a {
 
 #name-caption {
     font-size: 1em;
-    color: #999;
+    color: #bbb; /* lighter color for caption */
 }
 
 /* Projects section styling */
@@ -85,12 +81,11 @@ a {
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
     grid-gap: 10px;
     margin-bottom: 20px;
-    grid-auto-flow: dense;  /* Add this line */
+    grid-auto-flow: dense;
 }
 
-
 .project-img {
-    position: relative; /* This is needed for absolute positioning of the .project-tile */
+    position: relative; 
 }
 
 .project-img img {
@@ -102,21 +97,17 @@ a {
 .project-tile {
     position: absolute;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6);
-    color: #f0f0f0;
+    background-color: rgba(0, 0, 0, 0.6); 
+    color: #f0f0f0; 
     width: 100%;
     padding: 10px;
 }
 
-
 /* Videos section styling */
 .videos-div {
     display: flex;
-    /* make it a flex container */
     justify-content: center;
-    /* center horizontally */
     align-items: center;
-    /* center vertically */
     margin-bottom: 20px;
 }
 
@@ -126,7 +117,7 @@ a {
 
 /* Contact section styling */
 #contact-div {
-    background-color: #fafafa;
+    background-color: #333; /* darker background */
     padding: 20px;
 }
 
@@ -134,20 +125,17 @@ a {
     display: flex;
     justify-content: space-around;
     list-style-type: none;
-    /* remove bullets from the list */
     padding: 0;
-    /* remove padding from the list */
 }
 
 .contact-link-id {
-    color: #333;
-    font-size: 2em; /* increase icon size */
+    color: #ddd; /* lighter color for contact link */
+    font-size: 2em;
 }
 
 .contact-link-id:hover {
-    color: #999;
+    color: #bbb; /* lighter color for hover */
 }
-
 
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 768px) {
