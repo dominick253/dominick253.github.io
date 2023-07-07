@@ -23,7 +23,7 @@
 
 <body>
     <main>
-   
+
 
 
         <div id="name-div-parent">
@@ -32,87 +32,123 @@
                 <p id="name-caption"><i>Portfolio Projects</i> </p>
             </div>
         </div>
-
+        <br>
 
         <h2 class="h2-project">Coding Projects</h2>
         <br>
-        <h1>Dominick's Secure Real Time Multiplayer Game</h1>
-        <h3>Controls: WASD</h3>
-        <p id="player-rank"></p>
-  
-      </header>
-      <hr style="margin: 25px" />
-      <div class="container">
-        <canvas 
-          ref="game"
-          id="game-window" 
-          width="640" 
-          height="480"
-        >
-        </canvas>
-      </div>
-          <script src="/socket.io/socket.io.js"></script>
-          <script>
-            var socket = io();
-          </script>
-          <script src="./game.mjs" type="module"></script>
+        <h2>Dominick's Secure Real Time Multiplayer Game</h1>
+            <h3>Controls: WASD</h3>
+            <p id="player-rank"></p>
 
-          
-        <div id="projects">
-            <div class="project-img">
-                <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form">
-                    <img src="https://i.imgur.com/jP5gkP0.png" title="source: imgur.com" />
-                </a>
+            <div class="game-div">
+                <div class="game">
+
+                    <hr style="margin: 25px" />
+                    <div class="container">
+                        <canvas ref="game" id="game-window" width="640" height="480">
+                        </canvas>
+                    </div>
+
+                    <script src="/socket.io/socket.io.js"></script>
+                    <script>
+                        var socket = io();
+                    </script>
+                    <script src="./game.mjs" type="module"></script>
+                </div>>
+
             </div>
-        
-            <div class="project-img">
-                <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page">
-                    <img src="https://i.imgur.com/ZuLXPvx.png" title="source: imgur.com" />
-                </a>
+            <br>
+            <h2>Class Projects</h2>
+            <br>
+            <div id="projects">
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form">
+                        <img src="https://i.imgur.com/jP5gkP0.png" title="source: imgur.com" />
+                    </a>
+                </div>
+
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page">
+                        <img src="https://i.imgur.com/ZuLXPvx.png" title="source: imgur.com" />
+                    </a>
+                </div>
+
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page">
+                        <img src="https://i.imgur.com/cuIESDd.png" title="source: imgur.com" />
+                    </a>
+                </div>
+
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page">
+                        <img src="https://i.imgur.com/tx7i2TQ.png" title="source: imgur.com" />
+                    </a>
+                </div>
             </div>
-        
-            <div class="project-img">
-                <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page">
-                    <img src="https://i.imgur.com/cuIESDd.png" title="source: imgur.com" />
-                </a>
+
+
+            <h2 class="videos-head">Videos</h2>
+
+
+
+            <div id="videos-div" class="videos-div">
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/EKzkuJYTUBM"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-        
-            <div class="project-img">
-                <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page">
-                    <img src="https://i.imgur.com/tx7i2TQ.png" title="source: imgur.com" />
-                </a>
+
+            <div class="videos-div">
+
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/HEIOayBoKdc"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
             </div>
-        </div>
-        
 
-        <h2 class="videos-head">Videos</h2>
+            <div class="videos-div">
 
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/TDjX81nkVFA"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
 
+            <div class="videos-div">
 
-        <div id="videos-div" class="videos-div">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/T49zFodaU3g"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/AfA7wZBlfyU"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
+            <div class="videos-div">
 
-        <div class="videos-div">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/lcFp8f2NZXE"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/HEIOayBoKdc"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
+            <div class="videos-div">
 
-        <div class="videos-div">
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/UWw4QR9Hpu0"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
+            <div class="videos-div">
 
-            <iframe width="560" height="315" src="https://www.youtube.com/embed/997RB-6wiwk"
-                title="YouTube video player" frameborder="0"
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                allowfullscreen></iframe>
-        </div>
-
+                <iframe width="560" height="315" src="https://www.youtube.com/embed/B_5DtFAdH4E"
+                    title="YouTube video player" frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allowfullscreen></iframe>
+            </div>
     </main>
 
     <div id="contact-div">

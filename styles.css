@@ -12,6 +12,12 @@ main {
     padding: 20px;
 }
 
+.game-div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 canvas {
     margin: auto;
     border: 1px solid black;
@@ -120,11 +126,11 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-bottom: 20px;
+    margin-bottom: 40px;
 }
 
 .videos-div iframe {
-    max-width: 50%;
+    max-width: 500px;
 }
 
 /* Contact section styling */
