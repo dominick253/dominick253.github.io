@@ -24,36 +24,29 @@ canvas {
     /* Added to help visualize the canvas */
     background-color: grey;
     /* Added to help visualize the canvas */
-    width: 640px;
+    width: 680px;
     /* Explicit width */
     height: 480px;
     /* Explicit height */
   }
-  .drum {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
 
-  #display {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    align-items: center;
-    background-color: #2e5077;
-    width: 640px;
-    height: 480px;
+.drum {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto; /* Center horizontally */
+  background-color: #2e5077;
+    width: 680px;
+    height: 300px;
     border-radius: 10px;
   }
-
+  
   .drum-pad {
     display: flex;
     justify-content: center;
     align-items: center;
     height: 75px;
     width: 75px;
-    margin: 0.5rem;
-    border-radius: 5px;
     background-color: #d7e8ba;
     color: black;
     font-size: 1.5rem;
@@ -141,7 +134,11 @@ a {
     font-size: 1em;
     color: #bbb; /* lighter color for caption */
 }
-
+.projects-par {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 /* Projects section styling */
 #projects {
     display: grid;
@@ -149,6 +146,7 @@ a {
     grid-gap: 10px;
     margin-bottom: 20px;
     grid-auto-flow: dense;
+    max-width: 680px;
 }
 
 .project-img {
@@ -210,19 +208,12 @@ a {
         padding: 10px;
     }
 
-    .nav-links {
-        flex-direction: column;
-        align-items: center;
-    }
 
     #projects {
         grid-template-columns: 1fr;
     }
 
-    .videos-div iframe {
-        width: 100%;
-        height: 200px;
-    }
+  
 
     #contact-links {
         flex-direction: column;
