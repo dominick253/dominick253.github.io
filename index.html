@@ -35,8 +35,29 @@
 
 
         <h2>Coding Projects</h2>
+        <br>
+        <h1>Dominick's Secure Real Time Multiplayer Game</h1>
+        <h3>Controls: WASD</h3>
+        <p id="player-rank"></p>
+  
+      </header>
+      <hr style="margin: 25px" />
+      <div class="container">
+        <canvas 
+          ref="game"
+          id="game-window" 
+          width="640" 
+          height="480"
+        >
+        </canvas>
+      </div>
+          <script src="/socket.io/socket.io.js"></script>
+          <script>
+            var socket = io();
+          </script>
+          <script src="./game.mjs" type="module"></script>
 
-
+          
         <div id="projects">
             <div class="project-img">
                 <a href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form">
