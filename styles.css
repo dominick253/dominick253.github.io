@@ -29,7 +29,47 @@ canvas {
     height: 480px;
     /* Explicit height */
   }
+  .drum {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
 
+  #display {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    background-color: #2e5077;
+    width: 640px;
+    height: 480px;
+    border-radius: 10px;
+  }
+
+  .drum-pad {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75px;
+    width: 75px;
+    margin: 0.5rem;
+    border-radius: 5px;
+    background-color: #d7e8ba;
+    color: black;
+    font-size: 1.5rem;
+    text-align: center;
+    cursor: pointer;
+  }
+  
+  .clip {
+    display: none;
+  }
+  
+  .drum-pad:focus {
+    outline: none;
+    border: 3px solid #feca57;
+  }
+  
 h1,
 h2,
 h3 {
