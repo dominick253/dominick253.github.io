@@ -12,6 +12,18 @@ main {
     padding: 20px;
 }
 
+canvas {
+    margin: auto;
+    border: 1px solid black;
+    /* Added to help visualize the canvas */
+    background-color: grey;
+    /* Added to help visualize the canvas */
+    width: 640px;
+    /* Explicit width */
+    height: 480px;
+    /* Explicit height */
+  }
+
 h1,
 h2,
 h3 {
@@ -143,10 +155,10 @@ a {
         padding: 10px;
     }
 
-/*     .nav-links {
+    .nav-links {
         flex-direction: column;
         align-items: center;
-    } */
+    }
 
     #projects {
         grid-template-columns: 1fr;
