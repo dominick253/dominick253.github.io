@@ -3,7 +3,8 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
-    background-color: #222; /* darker background */
+    background-color: #222;
+    /* darker background */
 }
 
 main {
@@ -19,8 +20,10 @@ main {
 }
 
 canvas {
-    margin: auto;
+    margin: 0 auto;
     border: 1px solid black;
+    border-radius: 10px;
+
     /* Added to help visualize the canvas */
     background-color: grey;
     /* Added to help visualize the canvas */
@@ -28,20 +31,20 @@ canvas {
     /* Explicit width */
     height: 480px;
     /* Explicit height */
-  }
+}
 
 .drum {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  margin: 0 auto; /* Center horizontally */
-  background-color: #2e5077;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 0 auto;
+    background-color: #2e5077;
     width: 680px;
     height: 300px;
     border-radius: 10px;
-  }
-  
-  .drum-pad {
+}
+
+.drum-pad {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -52,39 +55,45 @@ canvas {
     font-size: 1.5rem;
     text-align: center;
     cursor: pointer;
-  }
-  
-  .clip {
+}
+
+.clip {
     display: none;
-  }
-  
-  .drum-pad:focus {
+}
+
+.drum-pad:focus {
     outline: none;
     border: 3px solid #feca57;
-  }
-  
+}
+
 h1,
 h2,
 h3 {
-    display:flex;
+    display: flex;
     justify-content: center;
-    color: #ddd; /* lighter color for headers */
+    color: #ddd;
+    /* lighter color for headers */
 }
 
 a {
     text-decoration: none;
-    color: #ddd; /* lighter color for links */
+    color: #ddd;
+    /* lighter color for links */
 }
+
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
     width: 100%;
-    height: 60px; /* Adjust based on your needs */
-    background-color: #333; /* Adjust based on your needs */
-    z-index: 1000; /* Set a high value so that the navbar stays on top of other elements */
-  }
-  
+    height: 60px;
+    /* Adjust based on your needs */
+    background-color: #333;
+    /* Adjust based on your needs */
+    z-index: 1000;
+    /* Set a high value so that the navbar stays on top of other elements */
+}
+
 /* Navbar styling */
 .nav {
     display: flex;
@@ -121,8 +130,10 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
+    width: 100vw;
     height: 100vh;
-    background-color: #333; /* darker background */
+    background-color: #333;
+    /* darker background */
     margin-bottom: 20px;
 }
 
@@ -132,17 +143,20 @@ a {
 
 #name-caption {
     font-size: 1em;
-    color: #bbb; /* lighter color for caption */
+    color: #bbb;
+    /* lighter color for caption */
 }
+
 .projects-par {
     display: flex;
     justify-content: center;
     align-items: center;
 }
+
 /* Projects section styling */
 #projects {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr)); 
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
     grid-gap: 10px;
     margin-bottom: 20px;
     grid-auto-flow: dense;
@@ -150,7 +164,7 @@ a {
 }
 
 .project-img {
-    position: relative; 
+    position: relative;
 }
 
 .project-img img {
@@ -162,8 +176,8 @@ a {
 .project-tile {
     position: absolute;
     bottom: 0;
-    background-color: rgba(0, 0, 0, 0.6); 
-    color: #f0f0f0; 
+    background-color: rgba(0, 0, 0, 0.6);
+    color: #f0f0f0;
     width: 100%;
     padding: 10px;
 }
@@ -182,7 +196,8 @@ a {
 
 /* Contact section styling */
 #contact-div {
-    background-color: #333; /* darker background */
+    background-color: #333;
+    /* darker background */
     padding: 20px;
 }
 
@@ -194,12 +209,14 @@ a {
 }
 
 .contact-link-id {
-    color: #ddd; /* lighter color for contact link */
+    color: #ddd;
+    /* lighter color for contact link */
     font-size: 2em;
 }
 
 .contact-link-id:hover {
-    color: #bbb; /* lighter color for hover */
+    color: #bbb;
+    /* lighter color for hover */
 }
 
 /* Responsive design for mobile devices */
@@ -213,7 +230,7 @@ a {
         grid-template-columns: 1fr;
     }
 
-  
+
 
     #contact-links {
         flex-direction: column;
