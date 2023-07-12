@@ -219,21 +219,30 @@ a {
     /* lighter color for hover */
 }
 
-/* Responsive design for mobile devices */
-@media only screen and (max-width: 768px) {
-    main {
-        padding: 10px;
+/* Responsive design for mobile devices */ 
+@media only screen and
+(max-width: 768px) {
+    main { padding: 10px;
     }
 
+.drum {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap; /* Added to wrap drum pads onto multiple lines if necessary */
+    justify-content: center;
+    align-items: center;
+  }
+
+  .drum-pad {
+    flex: 0 0 calc(33.33% - 10px); /* Adjust the width as needed */
+    margin: 5px; /* Added margin for spacing between drum pads */
+  }
 
     #projects {
         grid-template-columns: 1fr;
     }
 
-
-
     #contact-links {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; align-items: center;
     }
 }
