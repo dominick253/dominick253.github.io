@@ -23,10 +23,10 @@ function handlePlayerMovement(event) {
   if (!player) return;
 
   const movementMap = {
-    w: { direction: 'up', pixels: 10 },
-    s: { direction: 'down', pixels: 10 },
-    a: { direction: 'left', pixels: 10 },
-    d: { direction: 'right', pixels: 10 },
+    w: { direction: 'up', pixels: 20 },
+    s: { direction: 'down', pixels: 20 },
+    a: { direction: 'left', pixels: 20 },
+    d: { direction: 'right', pixels: 20 },
   };
 
   const movement = movementMap[event.key];

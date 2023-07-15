@@ -1,18 +1,32 @@
+
+/* To see all elements and how they interact */
+/* * {
+    border: 1px solid red;
+} */
+
+
 /* General styling */
 body {
     font-family: Arial, sans-serif;
     margin: 0;
     padding: 0;
     background-color: #222;
-    /* darker background */
 }
 
-main {
-    max-width: 1200px;
-    margin: 0 auto;
-    padding: 20px;
+h1,
+h2,
+h3 {
+    display: flex;
+    justify-content: center;
+    color: #ddd;
 }
 
+a {
+    text-decoration: none;
+    color: #ddd;
+}
+
+/* game styling */
 .game-div {
     display: flex;
     justify-content: center;
@@ -23,16 +37,12 @@ canvas {
     margin: 0 auto;
     border: 1px solid black;
     border-radius: 10px;
-
-    /* Added to help visualize the canvas */
     background-color: grey;
-    /* Added to help visualize the canvas */
     width: 680px;
-    /* Explicit width */
     height: 480px;
-    /* Explicit height */
 }
 
+/* drum styling */
 .drum {
     display: flex;
     justify-content: center;
@@ -66,49 +76,82 @@ canvas {
     border: 3px solid #feca57;
 }
 
-h1,
-h2,
-h3 {
+/* calculator styling */
+#cal-par {
     display: flex;
     justify-content: center;
-    color: #ddd;
-    /* lighter color for headers */
+    align-items: center;
+    width: (100vw - 5px);
 }
+.App {
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+    width: 282px;
+    height: 390px;
+    background-color: #283618;
+    border-radius: 5px;
+  }
 
-a {
-    text-decoration: none;
-    color: #ddd;
-    /* lighter color for links */
-}
+#display {
+    font-size: 2rem;
+    background-color: #fefae0;
+    border-radius: 5px;
+    text-align: right;
+    /* padding-right: 10px; */
+  }
+  
+  #numbers {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+  button {
+    border-radius: 5px;
+    background-color: #dda15e;
+    width: 70px;
+    height: 70px;
+  }
+  button:hover {
+    background-color: #fefae0;
+  }
+  #clear:hover {
+    background-color: #d62828;
+  }
+  #del:hover {
+    background-color: #bc6c25;
+  }
+  #equals:hover {
+    background-color: #81b29a;
+  }
+  #equals {
+    width: 210px;
+  }
 
+  /* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     height: 60px;
-    /* Adjust based on your needs */
     background-color: #333;
-    /* Adjust based on your needs */
     z-index: 1000;
-    /* Set a high value so that the navbar stays on top of other elements */
 }
 
-/* Navbar styling */
 .nav {
     display: flex;
     justify-content: center;
-    /* Add this */
     background-color: #0000008c;
     color: #f0f0f0;
-    padding: 10px;
     list-style-type: none;
 }
 
 .nav-links {
     display: flex;
     justify-content: center;
-    /* Add this */
 }
 
 .nav-links li {
@@ -117,7 +160,6 @@ a {
 
 .nav-list {
     margin: 0 10px;
-    /* Add symmetric margins to center the links better */
     color: #f0f0f0;
 }
 
@@ -130,10 +172,9 @@ a {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 100vw;
+    width: (100vw - 10px);
     height: 100vh;
     background-color: #333;
-    /* darker background */
     margin-bottom: 20px;
 }
 
@@ -144,7 +185,6 @@ a {
 #name-caption {
     font-size: 1em;
     color: #bbb;
-    /* lighter color for caption */
 }
 
 .projects-par {
@@ -178,7 +218,7 @@ a {
     bottom: 0;
     background-color: rgba(0, 0, 0, 0.6);
     color: #f0f0f0;
-    width: 100%;
+    width: 100vw;
     padding: 10px;
 }
 
@@ -197,7 +237,6 @@ a {
 /* Contact section styling */
 #contact-div {
     background-color: #333;
-    /* darker background */
     padding: 20px;
 }
 
@@ -210,27 +249,36 @@ a {
 
 .contact-link-id {
     color: #ddd;
-    /* lighter color for contact link */
     font-size: 2em;
 }
 
 .contact-link-id:hover {
     color: #bbb;
-    /* lighter color for hover */
 }
 
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 768px) {
-    main {
-        padding: 10px;
+
+    canvas{
+        width: 100%;
     }
 
+    .drum {
+        width: 100%;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+      
+      .drum-pad {
+        flex: 0 0 calc(33.33% - 10px); 
+        margin: 5px;
+      }
 
     #projects {
         grid-template-columns: 1fr;
     }
-
-
 
     #contact-links {
         flex-direction: column;
