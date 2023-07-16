@@ -258,30 +258,16 @@ canvas {
 
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 768px) {
-
-    canvas{
-        width: 100%;
+    main {
+        padding: 10px;
     }
 
-    .drum {
-        width: 100%;
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        align-items: center;
-      }
-      
-      .drum-pad {
-        flex: 0 0 calc(33.33% - 10px); 
-        margin: 5px;
-      }
 
     #projects {
         grid-template-columns: 1fr;
     }
 
     #contact-links {
-        flex-direction: column;
-        align-items: center;
+        flex-direction: column; align-items: center;
     }
 }
