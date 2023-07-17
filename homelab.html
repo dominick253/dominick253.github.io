@@ -5,18 +5,20 @@
     <title>Dominick Pescetto's Homelab</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <script src="/server.js" type="module"></script>
-    <link rel="stylesheet" href="/home_lab_styles.css">
+    <link rel="stylesheet" href="/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+
 
 </head>
 <header>
     <div class="navbar">
         <navbar id="navbar" class="nav">
             <ul class="nav-links" attribute="no">
-                <li><a class="nav-list" href="/index.html#name-div-parent">About</a></li>
-                <li><a class="nav-list" href="/index.html#h2-project">Projects</a></li>
-                <li><a class="nav-list" href="/index.html#videos-head">Videos</a></li>
+                <li><a class="nav-list" href="/index.html#name-div-parent">Home</a></li>
+                <li><a class="nav-list" href="/projects">Projects</a></li>
+                <li><a class="nav-list" href="/videos">Videos</a></li>
                 <li><a class="nav-list" href="/homelab">Homelab</a></li>
-                <li><a class="nav-list" href="/index.html#contact-div">Contact</a></li>
+                <li><a class="nav-list" href="#contact-div">Contact</a></li>
             </ul>
         </navbar>
     </div>
@@ -24,8 +26,8 @@
 <body>
     <main>
     <h1>Dominick Pescetto's Homelab</h1>
-    <p>Hello and welcome to my website!</p>
-    <img class="img" src="/assets/Me In Suit and Tie.jpg" alt="Me in a suit and tie.">
+    <h3>Hello and welcome to my website!</h3>
+    <!-- <img class="img" src="/assets/Me In Suit and Tie.jpg" alt="Me in a suit and tie."> -->
         <br>
         <p>
         Here is a brief overview of my homelab. It all started with a broken laptop. 
@@ -56,5 +58,27 @@
     </p>
     <img class="img" src="/assets/Pi OpenWRT Router.jpg" alt="OpenWRT router with a 3d printed case.">
 </main>
+<div id="contact-div">
+    <h2 id="quote-text">Learning every day.</h2>
+    <div id="contact-links">
+        <ul>
+            <li class="contact-link-id" id="youtube">
+                <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
+                    <i class="fab fa-youtube"></i>
+                </a>
+            </li>
+            <li class="contact-link-id" id="github">
+                <a href="https://github.com/dominick253?tab=repositories">
+                    <i class="fab fa-github"></i>
+                </a>
+            </li>
+            <li class="contact-link-id" id="freecodecamp">
+                <a href="https://www.freecodecamp.org/Dominick253">
+                    <i class="fab fa-free-code-camp"></i>
+                </a>
+            </li>
+        </ul>
+    </div>
+</div>
 </body>
 </html>

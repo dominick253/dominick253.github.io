@@ -71,7 +71,14 @@ app.route('/homelab')
   .get(function(req, res) {
     res.sendFile(process.cwd() + '/homelab.html');
   });
-
+  app.route('/projects')
+  .get(function(req, res) {
+    res.sendFile(process.cwd() + '/projects.html');
+  });
+  app.route('/videos')
+  .get(function(req, res) {
+    res.sendFile(process.cwd() + '/videos.html');
+  });
 // 404 Not Found Middleware
 app.use(function(req, res, next) {
   res.status(404)

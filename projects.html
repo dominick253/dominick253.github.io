@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dominick Pescetto's Projects</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="https://unpkg.com/react@17.0.2/umd/react.development.js"></script>
+    <script src="https://unpkg.com/react-dom@17.0.2/umd/react-dom.development.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/6.26.0/babel.js"></script>
+    <script src="/socket.io/socket.io.js"></script>
+
+    <script src="./game.mjs" type="module"></script>
+    <script src="./Player.mjs" type="module"></script>
+    <script src="/server.js" type="module"></script>
+
+    <script>
+        var socket = io();
+    </script>
+    <script type="text/babel">
+        function Calculator() {
+            var [calculation, setCalcalculation] = React.useState("");
+
+            var ops = ["/", "*", "+", "-", "."];
+
+            var updateCalculator = (input) => {
+                var pattern = /[+\-*/]/;
+                if (calculation === "" && input === "0") {
+                    return;
+                }
+                if (input === ".") {
+                    var items = calculation.split(pattern);
+                    if (items[items.length - 1].includes(".")) {
+                        return;
+                    }
+                }
+                if (input !== "-" && pattern.test(input)) {
+                    var lastChar = calculation[calculation.length - 1] || "";
+                    var secondLastChar = calculation[calculation.length - 2] || "";
+                    if (pattern.test(lastChar)) {
+                        if (lastChar === "-" && pattern.test(secondLastChar)) {
+                            setCalcalculation(calculation.slice(0, -2) + input);
+                            return;
+                        }
+                        setCalcalculation(calculation.slice(0, -1) + input);
+                        return;
+                    }
+                }
+
+                setCalcalculation(calculation + input);
+            };
+            var calculate = () => {
+                setCalcalculation(eval(calculation).toString());
+            };
+            var deleteLast = () => {
+                if (calculation === "") {
+                    return;
+                }
+
+                var value = calculation.slice(0, -1);
+                setCalcalculation(value);
+            };
+
+            var clearAll = () => {
+                setCalcalculation("");
+            };
+
+            return (
+                <div id="cal-par">
+                <div className="App">
+                    <div className="calculator">
+                        <div className="display" id="display">
+                            {calculation || "0"}
+                        </div>
+                        <button id="del" onClick={deleteLast}>
+                            DEL
+                        </button>
+                        <button id="clear" onClick={clearAll}>
+                            AC
+                        </button>
+                        <button
+                            id="add"
+                            onClick={() => {
+                                updateCalculator("+");
+                            }}
+                        >
+                            +
+                        </button>
+                        <button
+                            id="subtract"
+                            onClick={() => {
+                                updateCalculator("-");
+                            }}
+                        >
+                            -
+                        </button>
+
+                        <button
+                            id="one"
+                            onClick={() => {
+                                updateCalculator("1");
+                            }}
+                        >
+                            1
+                        </button>
+                        <button
+                            id="two"
+                            onClick={() => {
+                                updateCalculator("2");
+                            }}
+                        >
+                            2
+                        </button>
+                        <button
+                            id="three"
+                            onClick={() => {
+                                updateCalculator("3");
+                            }}
+                        >
+                            3
+                        </button>
+                        <button
+                            id="multiply"
+                            onClick={() => {
+                                updateCalculator("*");
+                            }}
+                        >
+                            *
+                        </button>
+                        <button
+                            id="four"
+                            onClick={() => {
+                                updateCalculator("4");
+                            }}
+                        >
+                            4
+                        </button>
+                        <button
+                            id="five"
+                            onClick={() => {
+                                updateCalculator("5");
+                            }}
+                        >
+                            5
+                        </button>
+                        <button
+                            id="six"
+                            onClick={() => {
+                                updateCalculator("6");
+                            }}
+                        >
+                            6
+                        </button>
+                        <button
+                            id="divide"
+                            onClick={() => {
+                                updateCalculator("/");
+                            }}
+                        >
+                            /
+                        </button>
+                        <button
+                            id="seven"
+                            onClick={() => {
+                                updateCalculator("7");
+                            }}
+                        >
+                            7
+                        </button>
+                        <button
+                            id="eight"
+                            onClick={() => {
+                                updateCalculator("8");
+                            }}
+                        >
+                            8
+                        </button>
+                        <button
+                            id="nine"
+                            onClick={() => {
+                                updateCalculator("9");
+                            }}
+                        >
+                            9
+                        </button>
+                        <button
+                            id="zero"
+                            onClick={() => {
+                                updateCalculator("0");
+                            }}
+                        >
+                            0
+                        </button>
+                        <button
+                            id="decimal"
+                            onClick={() => {
+                                updateCalculator(".");
+                            }}
+                        >
+                            .
+                        </button>
+                        <button id="equals" onClick={calculate}>
+                            =
+                        </button>
+                    </div>
+                </div>
+                </div>
+            );
+        }
+
+        ReactDOM.render(<Calculator />, document.getElementById("root"));
+
+    </script>
+</head>
+
+<header>
+    <div class="navbar">
+        <navbar id="navbar" class="nav">
+            <ul class="nav-links" attribute="no">
+                <li><a class="nav-list" href="/">Home</a></li>
+                <li><a class="nav-list" href="/projects">Projects</a></li>
+                <li><a class="nav-list" href="/videos">Videos</a></li>
+                <li><a class="nav-list" href="/homelab">Homelab</a></li>
+                <li><a class="nav-list" href="#contact-div">Contact</a></li>
+            </ul>
+        </navbar>
+    </div>
+</header>
+
+<body>
+    <main>
+        <br>
+        <br>
+        <br>
+        <h1 id="h2-project">Coding Projects</h1>
+        <br>
+        <br>
+        <h2>React Calculator</h2>
+
+    <div id="root"></div>
+        <br>
+        <br>
+        <h2>Dominick's Secure Real Time Multiplayer Game</h2>
+        <h3>Controls: WASD</h3>
+        <p id="player-rank"></p>
+
+        <div class="game-div">
+            <div class="game">
+                <hr style="margin: 25px" />
+                <div class="container">
+                    <canvas ref="game" id="game-window" width="640" height="480">
+                    </canvas>
+                </div>
+
+            </div>>
+
+        </div>
+        <br>
+        <br>
+        <a href="https://codepen.io/dominick253/pen/abajwBx">
+            <h1 class="drum-ref">Drum Machine</h1>
+        </a>
+        <br>
+        <br>
+        <div class="drum">
+
+            <button type="button" class="drum-pad" id="heater-1" onclick="document.getElementById('Q').play()">Q
+                <audio class="clip" id="Q" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-2" onclick="document.getElementById('W').play()">W
+                <audio class="clip" id="W" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-3" onclick="document.getElementById('E').play()">E
+                <audio class="clip" id="E" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-4" onclick="document.getElementById('A').play()">A
+                <audio class="clip" id="A" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-5" onclick="document.getElementById('S').play()">S
+                <audio class="clip" id="S" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-6" onclick="document.getElementById('D').play()">D
+                <audio class="clip" id="D" src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-7" onclick="document.getElementById('Z').play()">Z
+                <audio class="clip" id="Z" src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-8" onclick="document.getElementById('X').play()">X
+                <audio class="clip" id="X" src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"></audio>
+            </button>
+            <button type="button" class="drum-pad" id="heater-9" onclick="document.getElementById('C').play()">C
+                <audio class="clip" id="C" src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"></audio>
+            </button>
+
+        </div>
+        <br>
+        <br>
+        <h1>Class Projects</h1>
+        <br>
+        <br>
+        <div class="projects-par">
+            <div id="projects">
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-survey-form-project/build-a-survey-form">
+                        <img src="https://i.imgur.com/jP5gkP0.png" title="source: imgur.com" />
+                    </a>
+                </div>
+
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-tribute-page-project/build-a-tribute-page">
+                        <img src="https://i.imgur.com/ZuLXPvx.png" title="source: imgur.com" />
+                    </a>
+                </div>
+
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-technical-documentation-page-project/build-a-technical-documentation-page">
+                        <img src="https://i.imgur.com/cuIESDd.png" title="source: imgur.com" />
+                    </a>
+                </div>
+
+                <div class="project-img">
+                    <a
+                        href="https://www.freecodecamp.org/learn/2022/responsive-web-design/build-a-product-landing-page-project/build-a-product-landing-page">
+                        <img src="https://i.imgur.com/tx7i2TQ.png" title="source: imgur.com" />
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div id="contact-div">
+            <h2 id="quote-text">Learning every day.</h2>
+            <div id="contact-links">
+                <ul>
+                    <li class="contact-link-id" id="youtube">
+                        <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
+                            <i class="fab fa-youtube"></i>
+                        </a>
+                    </li>
+                    <li class="contact-link-id" id="github">
+                        <a href="https://github.com/dominick253?tab=repositories">
+                            <i class="fab fa-github"></i>
+                        </a>
+                    </li>
+                    <li class="contact-link-id" id="freecodecamp">
+                        <a href="https://www.freecodecamp.org/Dominick253">
+                            <i class="fab fa-free-code-camp"></i>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        
+    </main>
+</body>
+
+</html>

@@ -1,4 +1,3 @@
-
 /* To see all elements and how they interact */
 /* * {
     border: 1px solid red;
@@ -13,17 +12,35 @@ body {
     background-color: #222;
 }
 
+main {
+    padding-top: 50px;
+}
+
 h1,
 h2,
-h3 {
+h3,
+p {
     display: flex;
     justify-content: center;
     color: #ddd;
 }
 
+p {
+    display: block;
+    justify-content: center;
+    margin: 0 auto;
+    max-width: 680px;
+}
+
 a {
     text-decoration: none;
     color: #ddd;
+}
+
+img {
+    display: block;
+    margin: 0 auto;
+    width: 680px;
 }
 
 /* game styling */
@@ -83,6 +100,7 @@ canvas {
     align-items: center;
     width: (100vw - 5px);
 }
+
 .App {
     /* display: flex;
     justify-content: center;
@@ -91,7 +109,7 @@ canvas {
     height: 390px;
     background-color: #283618;
     border-radius: 5px;
-  }
+}
 
 #display {
     font-size: 2rem;
@@ -99,38 +117,44 @@ canvas {
     border-radius: 5px;
     text-align: right;
     /* padding-right: 10px; */
-  }
-  
-  #numbers {
+}
+
+#numbers {
     display: flex;
     flex-wrap: wrap;
     flex-direction: row;
     justify-content: center;
     align-items: center;
-  }
-  button {
+}
+
+button {
     border-radius: 5px;
     background-color: #dda15e;
     width: 70px;
     height: 70px;
-  }
-  button:hover {
-    background-color: #fefae0;
-  }
-  #clear:hover {
-    background-color: #d62828;
-  }
-  #del:hover {
-    background-color: #bc6c25;
-  }
-  #equals:hover {
-    background-color: #81b29a;
-  }
-  #equals {
-    width: 210px;
-  }
+}
 
-  /* Navbar styling */
+button:hover {
+    background-color: #fefae0;
+}
+
+#clear:hover {
+    background-color: #d62828;
+}
+
+#del:hover {
+    background-color: #bc6c25;
+}
+
+#equals:hover {
+    background-color: #81b29a;
+}
+
+#equals {
+    width: 210px;
+}
+
+/* Navbar styling */
 .navbar {
     position: fixed;
     top: 0;
@@ -172,7 +196,8 @@ canvas {
     display: flex;
     justify-content: center;
     align-items: center;
-    width: (100vw - 10px);
+    margin-left: -10px;
+    width: 100vw;
     height: 100vh;
     background-color: #333;
     margin-bottom: 20px;
@@ -261,13 +286,30 @@ canvas {
     main {
         padding: 10px;
     }
-
+    img {
+        width: 100vw;
+    }
 
     #projects {
         grid-template-columns: 1fr;
     }
 
-    #contact-links {
-        flex-direction: column; align-items: center;
+    canvas {
+        width: 100vw;
     }
+    .drum {
+        width: 100%;
+        height: 200px;
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+      }
+
+    #contact-links {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    
 }
