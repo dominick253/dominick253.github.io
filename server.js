@@ -65,9 +65,12 @@ app.use(bodyParser.urlencoded({ extended: true }));
 // Index page (static HTML)
 app.route('/')
   .get(function(req, res) {
-    res.sendFile(process.cwd() + '/views/index.html');
+    res.sendFile(process.cwd() + '/index.html');
   });
-
+app.route('/homelab')
+  .get(function(req, res) {
+    res.sendFile(process.cwd() + '/homelab.html');
+  });
 
 // 404 Not Found Middleware
 app.use(function(req, res, next) {
