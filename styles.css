@@ -24,13 +24,14 @@ p {
     justify-content: center;
     color: #ddd;
 }
+
 li {
     color: #ddd;
 }
 
 .centered-list {
     display: block;
-    width: 600px; 
+    width: 80vw;
     margin-left: auto;
     margin-right: auto;
 }
@@ -41,7 +42,7 @@ p {
     display: block;
     justify-content: center;
     margin: 0 auto;
-    max-width: 680px;
+    max-width: 80vw;
 }
 
 a {
@@ -52,10 +53,13 @@ a {
 img {
     display: block;
     margin: 0 auto;
-    width: 500px;
+    max-height: 70vh;
+    max-width: 70vw;
     margin-top: 20px;
     margin-bottom: 60px;
 }
+
+
 
 /* game styling */
 .game-div {
@@ -69,8 +73,8 @@ canvas {
     border: 1px solid black;
     border-radius: 10px;
     background-color: grey;
-    width: 680px;
-    height: 480px;
+    width: 80vw;
+    height: 80vh;
 }
 
 /* drum styling */
@@ -80,7 +84,7 @@ canvas {
     align-items: center;
     margin: 0 auto;
     background-color: #2e5077;
-    width: 680px;
+    width: 80vw;
     height: 300px;
     border-radius: 10px;
 }
@@ -299,6 +303,7 @@ button:hover {
     0% {
         transform: translateX(400%);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -308,6 +313,7 @@ button:hover {
     0% {
         transform: translateX(-400%);
     }
+
     100% {
         transform: translateX(0);
     }
@@ -333,18 +339,19 @@ button:hover {
 
     .centered-list {
         display: block;
-        width: 85vw; 
+        width: 85vw;
         margin-left: auto;
         margin-right: auto;
     }
+
     #name {
         font-size: 2em;
     }
-    
+
     #name-caption {
         font-size: 1em;
     }
-    
+
     img {
         width: 80vw;
     }
@@ -374,5 +381,3 @@ button:hover {
 
 
 }
-
-

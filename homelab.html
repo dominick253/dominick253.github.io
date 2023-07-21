@@ -28,21 +28,24 @@
 <body>
     <br>
     <br>
+    <br>
     <main>
-        <h2>Welcome to Dominick's Home Lab Journey!</h2>
+        <h2>Welcome to My Home Lab Journey!</h2>
+        <br>
         <h3>My Origin Story</h3>
         <br>
         <p>
             It all started when my old WiFi router started playing up. Annoyed yet intrigued by the issue, I decided to
             dive into the world of network hardware and software management to fix the problem. As a programming student
-            at the time, I had an old laptop with a broken keyboard just sitting around. Instead of seeing it as
+            at the time, I had a 2014 HP laptop with a broken keyboard just sitting around. Instead of seeing it as
             e-waste, I realized its potential to be reborn as a network guardian for my home.
 
             The first step? Installing OpnSense on it - a FreeBSD based open-source software that delivers easy-to-use,
             robust firewall and routing capabilities.
         </p>
-        <br>
         <img class="img" src="/assets/Opnsense router install - comp2.jpg" alt="Red laptop open running Opensense">
+
+        <br>
 
         <h3>Evolving the Home Lab</h3>
         <p>
@@ -54,7 +57,7 @@
             could handle my network traffic with ease.
         </p>
         <br>
-        <img class="img" src="/assets/Pi OpenWRT Router - comp.jpg" alt="OpenWRT router with a 3d printed case.">
+        <img class="img" id="pi" src="/assets/Pi OpenWRT Router - comp.jpg" alt="OpenWRT router with a 3d printed case.">
     </main>
 
     <h3>The Server-side Story</h3>
@@ -66,7 +69,7 @@
         However, I soon realized that containerization would simplify both development and maintenance, making the
         transition between my development laptop and the server a breeze. Enter Docker and Portainer: these tools helped
         me create and manage my containers efficiently, and the difference was night and day!</p>
-    <img class="img" src="assets/Red Ubuntu Server Laptop Open - comp.jpg" alt="Red Ubuntu Server Laptop Open">
+    <img class="img" src="assets/Red Laptop Vertical Stand - comp - cropped.jpg" alt="Red Ubuntu Server Laptop Open">
 
 
     <h3>Current Status</h3>
@@ -77,39 +80,45 @@
     <ol class="centered-list">
         <li><strong>Uptime Kuma:</strong> A beautiful, self-hosted monitoring tool that helps me keep track of my
             server's health and performance.</li>
+            <img class="img" src="assets/Uptime Kuma - comp.png" alt="Uptime Kuma">
+
         <br>
         <li><strong>Jellyfin:</strong> This open-source media system is my go-to for organizing and streaming my
             multimedia content.</li>
+            <img class="img" src="assets/Jellyfin - comp.png" alt="Jellyfin">
+
         <br>
 
         <li><strong>Nextcloud:</strong> File sharing is a breeze with Nextcloud. It offers a safe, private, and
             convenient solution for syncing and sharing my files.</li>
+            <img class="img" src="assets/Nextcloud - comp.png" alt="Nextcloud">
+
         <br>
 
         <li><strong>Heimdall Application Dashboard:</strong> This elegant solution helps me keep all my applications
             organized under one roof. It acts as a homepage for all the apps running on my server, making access quick
             and straightforward.</li>
+            <img class="img" src="assets/Heimdall - comp.png" alt="Heimdall">
+
         <br>
 
         <li><strong>CasaOS:</strong> A relatively new player in my lab, CasaOS simplifies my home cloud and smart home
             experience. It's an innovative IoT (Internet of Things) home server OS that provides a unified platform for
             smart home management.</li>
+            <img class="img" src="assets/CasaOs - comp.png" alt="CasaOs">
+
         <br>
 
         <li><strong>Portainer:</strong> This powerful open-source tool allows me to manage my Docker environments with
             ease, making containerization an effortless endeavor.</li>
+            <img class="img" src="assets/Portainer - comp.png" alt="Portainer">
+
 
     </ol>
 
     <p>To overcome the challenge of a dynamic IP address issued by my ISP, I've set up a Cloudflare tunnel. This keeps
         my external connections running smoothly, no matter how many times my ISP decides to shuffle the IP deck.</p>
 
-    <img class="img" src="assets/Heimdall - comp.png" alt="Heimdall">
-    <img class="img" src="assets/CasaOs - comp.png" alt="CasaOs">
-    <img class="img" src="assets/Jellyfin - comp.png" alt="Jellyfin">
-    <img class="img" src="assets/Nextcloud - comp.png" alt="Nextcloud">
-    <img class="img" src="assets/Portainer - comp.png" alt="Portainer">
-    <img class="img" src="assets/Uptime Kuma - comp.png" alt="Uptime Kuma">
 
     <h3>What's Next?</h3>
     <p>Looking towards the future, I'm considering dipping my toes into the realm of hypervisors. Proxmox is on my
