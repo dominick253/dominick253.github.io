@@ -24,8 +24,20 @@ p {
     justify-content: center;
     color: #ddd;
 }
+li {
+    color: #ddd;
+}
+
+.centered-list {
+    display: block;
+    width: 600px; 
+    margin-left: auto;
+    margin-right: auto;
+}
+
 
 p {
+    font-size: 1.1rem;
     display: block;
     justify-content: center;
     margin: 0 auto;
@@ -40,7 +52,9 @@ a {
 img {
     display: block;
     margin: 0 auto;
-    width: 680px;
+    width: 500px;
+    margin-top: 20px;
+    margin-bottom: 60px;
 }
 
 /* game styling */
@@ -204,12 +218,12 @@ button:hover {
 }
 
 #name {
-    font-size: 2em;
+    font-size: 4em;
 }
 
 #name-caption {
-    font-size: 1em;
-    color: #bbb;
+    font-size: 2em;
+    color: #ddd;
 }
 
 .projects-par {
@@ -281,13 +295,58 @@ button:hover {
     color: #bbb;
 }
 
+@keyframes slideFromRight {
+    0% {
+        transform: translateX(400%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes slideFromLeft {
+    0% {
+        transform: translateX(-400%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+#name {
+    animation: slideFromRight 2s forwards;
+}
+
+#name-caption {
+    animation: slideFromLeft 2s forwards;
+}
+
 /* Responsive design for mobile devices */
 @media only screen and (max-width: 768px) {
     main {
         padding: 10px;
     }
+
+    p {
+        width: 90vw;
+    }
+
+    .centered-list {
+        display: block;
+        width: 85vw; 
+        margin-left: auto;
+        margin-right: auto;
+    }
+    #name {
+        font-size: 2em;
+    }
+    
+    #name-caption {
+        font-size: 1em;
+    }
+    
     img {
-        width: 100vw;
+        width: 80vw;
     }
 
     #projects {
@@ -297,6 +356,8 @@ button:hover {
     canvas {
         width: 100vw;
     }
+
+    /* May have to split this into two divs in the future. To have drum pads appear properly */
     .drum {
         width: 100%;
         height: 200px;
@@ -304,12 +365,14 @@ button:hover {
         flex-wrap: wrap;
         justify-content: center;
         align-items: center;
-      }
+    }
 
     #contact-links {
         flex-direction: column;
         align-items: center;
     }
 
-    
+
 }
+
+
