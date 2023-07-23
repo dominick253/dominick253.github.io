@@ -12,10 +12,6 @@ body {
     background-color: #222;
 }
 
-main {
-    padding-top: 50px;
-}
-
 h1,
 h2,
 h3,
@@ -36,13 +32,15 @@ li {
     margin-right: auto;
 }
 
-
 p {
     font-size: 1.1rem;
     display: block;
     justify-content: center;
     margin: 0 auto;
-    max-width: 80vw;
+    max-width: 1200px;
+    padding-left: 20px;
+    padding-right: 20px;
+
 }
 
 a {
@@ -59,7 +57,34 @@ img {
     margin-bottom: 60px;
 }
 
+#overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-top: 50px;
+}
 
+#overlay-image {
+    max-width: 90%;
+    max-height: 90%;
+}
+
+#close-btn {
+    position: absolute;
+    top: 50px;
+    right: -10px;
+    color: white;
+    background-color: transparent;
+    border: none;
+    font-size: 2rem;
+    cursor: pointer;
+}
 
 /* game styling */
 .game-div {
@@ -73,8 +98,8 @@ canvas {
     border: 1px solid black;
     border-radius: 10px;
     background-color: grey;
-    width: 80vw;
-    height: 80vh;
+    width: 680px;
+    /* height: 80vh; */
 }
 
 /* drum styling */
@@ -84,8 +109,8 @@ canvas {
     align-items: center;
     margin: 0 auto;
     background-color: #2e5077;
-    width: 80vw;
-    height: 300px;
+    width: 680px;
+    height: 250px;
     border-radius: 10px;
 }
 
