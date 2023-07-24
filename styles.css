@@ -354,12 +354,11 @@ button:hover {
   #fileList {
     display: flex;
     flex-direction: column;
-    align-items: flex-start;
-    text-align: left;
-    width: 70%;              /* Adjust as needed */
+    align-items: center;
+    text-align: center;
+    width: 100%;              /* Adjust as needed */
     margin: 0 auto;          /* Centers the container */
 }
-
 
 
 @keyframes slideFromRight {

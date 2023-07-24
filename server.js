@@ -105,7 +105,7 @@ app.route('/files')
 
 
 const connection = mysql.createConnection({
-  host: '10.71.71.221', // *********** Change me to localhost before going to actual server ****************
+  host: 'localhost', // *********** Change me to localhost before going to actual server ****************
   user: 'root',
   password: process.env.DB_PASSWORD,
   database: 'files',
