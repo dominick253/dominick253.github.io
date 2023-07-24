@@ -39,7 +39,7 @@
             <div id="form-div">
                 <form id="upload-form">
                     <input type="file" id="file-input">
-                    <button id="upload-button" type="submit">Upload</button>
+                    <button class="file-button" id="upload-button" type="submit">Upload</button>
                 </form>
             </div>
 
@@ -83,7 +83,8 @@
                           const listItem = document.createElement('li');
                           const downloadLink = document.createElement('a');
                           const deleteButton = document.createElement('button');
-                  
+                          deleteButton.classList.add('file-button');
+
                           downloadLink.textContent = file.name;
                           downloadLink.href = `/download/${file.id}`;
                           downloadLink.setAttribute('target', '_blank'); // Open the link in a new tab
