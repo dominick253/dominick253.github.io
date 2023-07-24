@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <title>Dominick Pescetto's Portfolio</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="\styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <script src="/server.js" type="module"></script>
+
+</head>
+
+<header>
+    <div class="navbar">
+        <navbar id="navbar" class="nav">
+            <ul class="nav-links" attribute="no">
+                <li><a class="nav-list" href="/">Home</a></li>
+                <li><a class="nav-list" href="/projects">Projects</a></li>
+                <li><a class="nav-list" href="/videos">Videos</a></li>
+                <li><a class="nav-list" href="/files">Files</a></li>
+                <li><a class="nav-list" href="/homelab">Homelab</a></li>
+                <li><a class="nav-list" href="#contact-div">Contact</a></li>
+            </ul>
+        </navbar>
+    </div>
+</header>
+
+<body>
+    <main>
+        <div id="files-main">
+            <br>
+            <br>
+            <br>
+            <h1>File Server</h1>
+
+            <br>
+            <h2>Upload a File</h2>
+            <div id="form-div">
+                <form id="upload-form">
+                    <input type="file" id="file-input">
+                    <button id="upload-button" type="submit">Upload</button>
+                </form>
+            </div>
+
+            <script>
+                document.getElementById('upload-form').addEventListener('submit', function (e) {
+                    e.preventDefault();
+
+                    var formData = new FormData();
+                    formData.append('file', document.getElementById('file-input').files[0]);
+                    formData.append('uploaded_by', 'Dom');  // Replace 'username' with the actual username
+
+                    fetch('/upload', {
+                        method: 'POST',
+                        body: formData
+                    })
+                        .then(response => response.json())
+                        .then(data => {
+                            alert(data.message);
+                            console.log(data)
+                            fetchFileList();
+                        })
+                        .catch(error => console.error(error));
+                });
+            </script>
+            <br>
+            <br>
+            <h3>Download a File</h3>
+            <ul id="fileList"></ul>
+
+            <script>
+                function fetchFileList() {
+                    // Clear the current file list
+                    const fileList = document.getElementById('fileList');
+                    fileList.innerHTML = '';
+                  
+                    // Fetch the list of available files from the server
+                    fetch('/api/files')
+                      .then(response => response.json())
+                      .then(data => {
+                        data.forEach(file => {
+                          const listItem = document.createElement('li');
+                          const downloadLink = document.createElement('a');
+                          const deleteButton = document.createElement('button');
+                  
+                          downloadLink.textContent = file.name;
+                          downloadLink.href = `/download/${file.id}`;
+                          downloadLink.setAttribute('target', '_blank'); // Open the link in a new tab
+                  
+                          deleteButton.textContent = 'Delete';
+                          deleteButton.onclick = function() {
+                            deleteFile(file.id);
+                          };
+                  
+                          listItem.appendChild(downloadLink);
+                          listItem.appendChild(deleteButton);
+                          fileList.appendChild(listItem);
+                        });
+                      })
+                      .catch(error => {
+                        console.error('Error fetching file list:', error);
+                      });
+                  }
+                  
+                  // Call the function when the page loads
+                  fetchFileList();
+                  
+                    function deleteFile(fileId) {
+                        fetch('/api/files/' + fileId, { method: 'DELETE' })
+                          .then(response => {
+                            if (!response.ok) {
+                              throw new Error('Network response was not ok');
+                            }
+                            // Refresh the file list after a successful delete
+                            fetchFileList();
+                          })
+                          .catch(error => {
+                            console.error('Error:', error);
+                          });
+                      }
+            </script>
+
+        </div>
+    </main>
+    <div id="contact-div">
+        <h2 id="quote-text">Learning every day.</h2>
+        <div id="contact-links">
+            <ul>
+                <li class="contact-link-id" id="youtube">
+                    <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+                <li class="contact-link-id" id="github">
+                    <a href="https://github.com/dominick253?tab=repositories">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="contact-link-id" id="freecodecamp">
+                    <a href="https://www.freecodecamp.org/Dominick253">
+                        <i class="fab fa-free-code-camp"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</body>
+
+</html>
