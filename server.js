@@ -44,31 +44,31 @@ app.use((req, res, next) => {
   next();
 });
 
-// app.use(
-//   helmet({
-//     contentSecurityPolicy: {
-//       directives: {
-//         defaultSrc: ["'self'"],
-//         styleSrc: ["'self'",  'maxcdn.bootstrapcdn.com', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', "'unsafe-inline'", 'https://use.fontawesome.com'],
-//         scriptSrc: ["'self'", "'unsafe-eval'", 'cdnjs.cloudflare.com', "'unsafe-inline'", "unpkg.com", 'https://use.fontawesome.com'],
-//         fontSrc: ["'self'",  'https://fonts.gstatic.com', 'https://use.fontawesome.com', 'https://cdnjs.cloudflare.com'],
-//         imgSrc: ["'self'",  'https://i.imgur.com', "'blob:'", "'data:'"],
-//         frameSrc: ["'self'",  'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
-//         mediaSrc: ["'self'",  'https://s3.amazonaws.com', "'blob:'", "'data:'"],
-//       },
-//     },
-//     dnsPrefetchControl: false,
-//     expectCt: { maxAge: 0 },
-//     frameguard: { action: 'sameorigin' },
-//     hidePoweredBy: { setTo: 'PHP 7.4.3' },
-//     hsts: { maxAge: 0 },
-//     ieNoOpen: true,
-//     noSniff: true,
-//     permittedCrossDomainPolicies: true,
-//     referrerPolicy: { policy: 'no-referrer' },
-//     xssFilter: true,
-//   })
-// );
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'",  'maxcdn.bootstrapcdn.com', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', "'unsafe-inline'", 'https://use.fontawesome.com'],
+        scriptSrc: ["'self'", "'unsafe-eval'", 'cdnjs.cloudflare.com', "'unsafe-inline'", "unpkg.com", 'https://use.fontawesome.com'],
+        fontSrc: ["'self'",  'https://fonts.gstatic.com', 'https://use.fontawesome.com', 'https://cdnjs.cloudflare.com'],
+        imgSrc: ["'self'",  'https://i.imgur.com', "'blob:'", "'data:'"],
+        frameSrc: ["'self'",  'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
+        mediaSrc: ["'self'",  'https://s3.amazonaws.com', "'blob:'", "'data:'"],
+      },
+    },
+    dnsPrefetchControl: false,
+    expectCt: { maxAge: 0 },
+    frameguard: { action: 'sameorigin' },
+    hidePoweredBy: { setTo: 'PHP 7.4.3' },
+    hsts: { maxAge: 0 },
+    ieNoOpen: true,
+    noSniff: true,
+    permittedCrossDomainPolicies: true,
+    referrerPolicy: { policy: 'no-referrer' },
+    xssFilter: true,
+  })
+);
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
@@ -101,7 +101,7 @@ app.route('/files')
   });
 
 const connection = mysql.createConnection({
-  host: '10.71.71.221', // *********** Change me to localhost before going to actual server 172.17.0.4****************
+  host: 'localhost', // *********** Change me to localhost before going to actual server 172.17.0.4****************
   user: 'root',
   password: process.env.DB_PASSWORD,
   database: 'files',
