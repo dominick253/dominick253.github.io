@@ -1,3 +1,7 @@
+
+const dotenv = require('dotenv');
+dotenv.config();
+
 const express = require('express');
 const bodyParser = require('body-parser');
 const socket = require('socket.io');
@@ -6,12 +10,8 @@ const portNum = 3000;
 const path = require('path');
 const app = express();
 const mysql = require('mysql2');
-const dotenv = require('dotenv');
 const multer = require('multer');
-const cors = require('cors');
 const fs = require('fs');
-
-dotenv.config();
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -36,40 +36,39 @@ io.on('connection', function (socket) {
   });
 });
 
-//will enable security later once I get everything in place so I can add permissions
-// app.use((req, res, next) => {
-//   res.setHeader('Surrogate-Control', 'no-store');
-//   res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
-//   res.setHeader('Pragma', 'no-cache');
-//   res.setHeader('Expires', '0');
-//   next();
-// });
+app.use((req, res, next) => {
+  res.setHeader('Surrogate-Control', 'no-store');
+  res.setHeader('Cache-Control', 'no-store, no-cache, must-revalidate, proxy-revalidate');
+  res.setHeader('Pragma', 'no-cache');
+  res.setHeader('Expires', '0');
+  next();
+});
 
-// app.use(
-//     helmet({
-//       contentSecurityPolicy: {
-//         directives: {
-//           defaultSrc: ["'self'"],
-//           styleSrc: ["'self'", 'maxcdn.bootstrapcdn.com', 'https://fonts.googleapis.com', "'unsafe-inline'"],
-//           scriptSrc: ["'self'", 'cdnjs.cloudflare.com', "'unsafe-inline'"],
-//           fontSrc: ["'self'", 'https://fonts.gstatic.com'],
-//           imgSrc: ["'self'", 'https://i.imgur.com'],  // Add this line
-//           frameSrc: ["'self'", 'https://www.youtube.com', 'https://www.youtube-nocookie.com'],  // Add this line
-//         },
-//       },
-//       dnsPrefetchControl: false,
-//       expectCt: { maxAge: 0 },
-//       frameguard: { action: 'sameorigin' },
-//       hidePoweredBy: { setTo: 'PHP 7.4.3' },
-//       hsts: { maxAge: 0 },
-//       ieNoOpen: true,
-//       noSniff: true,
-//       permittedCrossDomainPolicies: true,
-//       referrerPolicy: { policy: 'no-referrer' },
-//       xssFilter: true,
-//     })
-//   );
-app.use(cors());
+app.use(
+  helmet({
+    contentSecurityPolicy: {
+      directives: {
+        defaultSrc: ["'self'"],
+        styleSrc: ["'self'",  'maxcdn.bootstrapcdn.com', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', "'unsafe-inline'", 'https://use.fontawesome.com'],
+        scriptSrc: ["'self'", "'unsafe-eval'", 'cdnjs.cloudflare.com', "'unsafe-inline'", "unpkg.com", 'https://use.fontawesome.com'],
+        fontSrc: ["'self'",  'https://fonts.gstatic.com', 'https://use.fontawesome.com', 'https://cdnjs.cloudflare.com'],
+        imgSrc: ["'self'",  'https://i.imgur.com'],
+        frameSrc: ["'self'",  'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
+        mediaSrc: ["'self'",  'https://s3.amazonaws.com'],
+      },
+    },
+    dnsPrefetchControl: false,
+    expectCt: { maxAge: 0 },
+    frameguard: { action: 'sameorigin' },
+    hidePoweredBy: { setTo: 'PHP 7.4.3' },
+    hsts: { maxAge: 0 },
+    ieNoOpen: true,
+    noSniff: true,
+    permittedCrossDomainPolicies: true,
+    referrerPolicy: { policy: 'no-referrer' },
+    xssFilter: true,
+  })
+);
 
 app.use('/public', express.static(process.cwd() + '/public'));
 
@@ -78,7 +77,6 @@ app.use(express.static(rootDir));
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
-
 
 // Index page (static HTML)
 app.route('/')
@@ -102,16 +100,13 @@ app.route('/files')
     res.sendFile(process.cwd() + '/files.html');
   });
 
-
-
 const connection = mysql.createConnection({
-  host: '172.17.0.4', // *********** Change me to localhost before going to actual server ****************
+  host: '10.71.71.221', // *********** Change me to localhost before going to actual server 172.17.0.4****************
   user: 'root',
   password: process.env.DB_PASSWORD,
   database: 'files',
 });
 
-// Test the database connection
 connection.connect((err) => {
   if (err) {
     console.error('Error connecting to the database:', err);
@@ -215,7 +210,6 @@ app.delete('/api/files/:fileId', (req, res) => {
     }
   });
 });
-
 
 // 404 Not Found Middleware
 app.use(function (req, res, next) {

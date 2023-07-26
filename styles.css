@@ -1,4 +1,5 @@
 /* To see all elements and how they interact */
+
 /* * {
     border: 1px solid red;
 } */
@@ -217,8 +218,8 @@ button:hover {
 }
 
 .nav-links {
+    padding: auto;
     display: flex;
-    justify-content: center;
 }
 
 .nav-links li {
@@ -226,7 +227,7 @@ button:hover {
 }
 
 .nav-list {
-    margin: 0 10px;
+    margin: 0 5px;
     color: #f0f0f0;
 }
 
@@ -243,7 +244,7 @@ button:hover {
     width: 100vw;
     height: 100vh;
     background-color: #333;
-    margin-bottom: 20px;
+    margin-bottom: -30px;
 }
 
 #name {
@@ -325,7 +326,7 @@ button:hover {
 }
 
 #files-main {
-    height: 80vh;
+    min-height: 80vh;
 }
 
 #form-div {
@@ -398,7 +399,10 @@ button:hover {
     p {
         width: 90vw;
     }
-
+    .nav-list {
+        margin: 0 5px;
+        color: #f0f0f0;
+    }
     .centered-list {
         display: block;
         width: 85vw;
