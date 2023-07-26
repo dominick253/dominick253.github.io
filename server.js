@@ -52,7 +52,7 @@ app.use(
         styleSrc: ["'self'",  'maxcdn.bootstrapcdn.com', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', "'unsafe-inline'", 'https://use.fontawesome.com'],
         scriptSrc: ["'self'", "'unsafe-eval'", 'cdnjs.cloudflare.com', "'unsafe-inline'", "unpkg.com", 'https://use.fontawesome.com'],
         fontSrc: ["'self'",  'https://fonts.gstatic.com', 'https://use.fontawesome.com', 'https://cdnjs.cloudflare.com'],
-        imgSrc: ["'self'",  'https://i.imgur.com'],
+        imgSrc: ["'self'",  'https://i.imgur.com', "'blob:'", "'data:'"],
         frameSrc: ["'self'",  'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
         mediaSrc: ["'self'",  'https://s3.amazonaws.com'],
       },
