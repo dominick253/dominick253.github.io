@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="\styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <script src="/server.js" type="module"></script>
+    <script src="https://code.jquery.com/jquery-3.5.1.min.js"></script>
 
 </head>
 
@@ -36,29 +37,81 @@
             </div>
         </div>
         <br>
-        </main>
-<div id="contact-div">
-    <h2 id="quote-text">Learning every day.</h2>
-    <div id="contact-links">
-        <ul>
-            <li class="contact-link-id" id="youtube">
-                <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
-                    <i class="fab fa-youtube"></i>
-                </a>
-            </li>
-            <li class="contact-link-id" id="github">
-                <a href="https://github.com/dominick253?tab=repositories">
-                    <i class="fab fa-github"></i>
-                </a>
-            </li>
-            <li class="contact-link-id" id="freecodecamp">
-                <a href="https://www.freecodecamp.org/Dominick253">
-                    <i class="fab fa-free-code-camp"></i>
-                </a>
-            </li>
-        </ul>
+        <br>
+        <h1>Guestbook</h1>
+        <div id="guestbookdiv">
+            <form id="guestbookForm">
+                <label for="name" style="font-size: 1.5rem;">Name:</label><br>
+                <input type="text" id="form-name" name="name" style="background-color: grey;"><br>
+                <label for="comment" style="font-size: 1.5rem;">Comment:</label><br>
+                <textarea id="comment" name="comment" style="background-color: grey;"></textarea><br>
+                <input type="submit" value="Submit">
+            </form>
+        </div>
+        <hr>
+
+        <div id="entries">
+            <!-- Guestbook entries will be inserted here -->
+        </div>
+
+        <script>
+            // Post a new entry
+            $('#guestbookForm').on('submit', function (e) {
+                e.preventDefault();
+
+                $.post('/guestbook', $(this).serialize(), function (data) {
+                    // Clear the form fields
+                    $('#name').val('');
+                    $('#comment').val('');
+
+                    // Reload the entries
+                    loadEntries();
+                });
+            });
+
+            // Load all entries
+            function loadEntries() {
+                $.get('/guestbook', function (data) {
+                    var entries = '';
+
+                    $.each(data, function (index, entry) {
+                        entries += '<h2>' + entry.name + '</h2>';
+                        entries += '<p>' + entry.comment + '</p>';
+                        entries += '<small>' + new Date(entry.date).toLocaleString() + '</small>';
+                        entries += '<hr>';
+                    });
+
+                    $('#entries').html(entries);
+                });
+            }
+
+            // Initial load of entries
+            loadEntries();
+        </script>
+
+    </main>
+    <div id="contact-div">
+        <h2 id="quote-text">Learning every day.</h2>
+        <div id="contact-links">
+            <ul>
+                <li class="contact-link-id" id="youtube">
+                    <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
+                        <i class="fab fa-youtube"></i>
+                    </a>
+                </li>
+                <li class="contact-link-id" id="github">
+                    <a href="https://github.com/dominick253?tab=repositories">
+                        <i class="fab fa-github"></i>
+                    </a>
+                </li>
+                <li class="contact-link-id" id="freecodecamp">
+                    <a href="https://www.freecodecamp.org/Dominick253">
+                        <i class="fab fa-free-code-camp"></i>
+                    </a>
+                </li>
+            </ul>
+        </div>
     </div>
-</div>
 </body>
 
 </html>

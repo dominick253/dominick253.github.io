@@ -256,6 +256,89 @@ button:hover {
     color: #ddd;
 }
 
+/* Guestbook styling */
+#guestbookdiv {
+    width: 100vw;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#guestbookForm,
+#entries {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    /* Center contents vertically */
+    margin-top: 20px;
+    color: #ddd;
+}
+
+#guestbookForm {
+    max-width: 600px;
+    width: 80vw;
+}
+
+#guestbookForm label {
+    align-self: center;
+    /* Align labels to the start */
+}
+
+#guestbookForm input,
+#guestbookForm textarea {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 10px;
+    color: #222;
+    background-color: #ddd;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.1rem;
+}
+
+#guestbookForm input[type="submit"] {
+    width: 100%;
+    /* Full width */
+    cursor: pointer;
+    background-color: #555;
+    color: #ddd;
+}
+
+#guestbookForm input[type="submit"]:hover {
+    background-color: #888;
+}
+
+#entries>div {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center contents vertically */
+    max-width: 600px;
+    width: 80vw;
+    padding: 10px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    background-color: #333;
+}
+
+hr {
+    width: 100vw;
+    border-top: 1px solid #ddd;  /* Adjust color as needed */
+    margin: 10px 0;  /* Add some vertical spacing */
+}
+
+#entries h2,
+#entries p,
+#entries small {
+    max-width: 400px;
+    padding-bottom: 20px;
+    margin: 5px 0;
+    text-align: center;
+    /* Center text horizontally */
+}
+
 .projects-par {
     display: flex;
     justify-content: center;
@@ -332,33 +415,35 @@ button:hover {
 #form-div {
     display: flex;
     justify-content: center;
-  }
+}
 
-  #upload-form {
+#upload-form {
     display: flex;
     justify-content: center;
     color: #ddd;
 
-  }
+}
 
-  .file-button {
+.file-button {
     height: 20px;
     margin-left: 20px;
     background-color: #ddd;
-  }
+}
 
-  .file-button:hover {
+.file-button:hover {
     background-color: rgb(31, 29, 29);
     color: #ddd;
-  }
-  
-  #fileList {
+}
+
+#fileList {
     display: flex;
     flex-direction: column;
     align-items: center;
     text-align: center;
-    width: 100%;              /* Adjust as needed */
-    margin: 0 auto;          /* Centers the container */
+    width: 100%;
+    /* Adjust as needed */
+    margin: 0 auto;
+    /* Centers the container */
 }
 
 
@@ -399,10 +484,12 @@ button:hover {
     p {
         width: 90vw;
     }
+
     .nav-list {
         margin: 0 5px;
         color: #f0f0f0;
     }
+
     .centered-list {
         display: block;
         width: 85vw;
@@ -416,6 +503,11 @@ button:hover {
 
     #name-caption {
         font-size: 1em;
+    }
+
+    #guestbookForm,
+    #entries>div {
+        width: 90vw;
     }
 
     img {

@@ -50,7 +50,7 @@ app.use(
       directives: {
         defaultSrc: ["'self'"],
         styleSrc: ["'self'",  'maxcdn.bootstrapcdn.com', 'https://fonts.googleapis.com', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css', "'unsafe-inline'", 'https://use.fontawesome.com'],
-        scriptSrc: ["'self'", "'unsafe-eval'", 'cdnjs.cloudflare.com', "'unsafe-inline'", "unpkg.com", 'https://use.fontawesome.com'],
+        scriptSrc: ["'self'", "'unsafe-eval'", 'cdnjs.cloudflare.com', "'unsafe-inline'", "unpkg.com", 'https://use.fontawesome.com', "https://code.jquery.com/jquery-3.5.1.min.js"],
         fontSrc: ["'self'",  'https://fonts.gstatic.com', 'https://use.fontawesome.com', 'https://cdnjs.cloudflare.com'],
         imgSrc: ["'self'",  'https://i.imgur.com', "'blob:'", "'data:'"],
         frameSrc: ["'self'",  'https://www.youtube.com', 'https://www.youtube-nocookie.com'],
@@ -74,7 +74,7 @@ app.use('/public', express.static(process.cwd() + '/public'));
 
 const rootDir = path.join(__dirname, '/');
 app.use(express.static(rootDir));
-
+app.use(express.json()); // for parsing application/json
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -101,7 +101,7 @@ app.route('/files')
   });
 
 const connection = mysql.createConnection({
-  host: '172.17.0.2', // *********** Change me to localhost before going to actual server 172.17.0.4****************
+  host: '172.17.0.2', //  172.17.0.2   10.71.71.221*********** Change me to localhost before going to actual server 172.17.0.4****************
   user: 'root',
   password: process.env.DB_PASSWORD,
   database: 'files',
@@ -208,6 +208,23 @@ app.delete('/api/files/:fileId', (req, res) => {
         });
       }
     }
+  });
+});
+
+app.get('/guestbook', function(req, res) {
+  connection.query('SELECT * FROM guestbook ORDER BY date DESC', function(err, rows) {
+    if(err) throw err;
+
+    res.send(rows);
+  });
+});
+
+app.post('/guestbook', function(req, res) {
+  var post = {name: req.body.name, comment: req.body.comment};
+  connection.query('INSERT INTO guestbook SET ?', post, function(err) {
+    if(err) throw err;
+
+    res.send({status: 'success'});
   });
 });
 
