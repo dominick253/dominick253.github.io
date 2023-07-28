@@ -1,32 +1,32 @@
-import Player from './Player.mjs';
-import Collectible from './Collectible.mjs';
+import Player from "./Player.mjs";
+import Collectible from "./Collectible.mjs";
 
 const socket = io();
-const canvas = document.getElementById('game-window');
-const context = canvas.getContext('2d');
+const canvas = document.getElementById("game-window");
+const context = canvas.getContext("2d");
 
 const players = [];
 const collectibles = [];
 
 window.onload = function () {
-  const canvas = document.getElementById('game-window');
-  const ctx = canvas.getContext('2d');
-  ctx.fillStyle = 'black';
+  const canvas = document.getElementById("game-window");
+  const ctx = canvas.getContext("2d");
+  ctx.fillStyle = "black";
   ctx.fillRect(20, 20, 150, 100);
-  addCollectible(); 
+  addCollectible();
 };
 
-document.addEventListener('keydown', handlePlayerMovement);
+document.addEventListener("keydown", handlePlayerMovement);
 
 function handlePlayerMovement(event) {
   const player = players.find((p) => p.id === socket.id);
   if (!player) return;
 
   const movementMap = {
-    w: { direction: 'up', pixels: 20 },
-    s: { direction: 'down', pixels: 20 },
-    a: { direction: 'left', pixels: 20 },
-    d: { direction: 'right', pixels: 20 },
+    w: { direction: "up", pixels: 20 },
+    s: { direction: "down", pixels: 20 },
+    a: { direction: "left", pixels: 20 },
+    d: { direction: "right", pixels: 20 },
   };
 
   const movement = movementMap[event.key];
@@ -37,16 +37,16 @@ function handlePlayerMovement(event) {
 
 function movePlayer(player, direction, pixels) {
   switch (direction) {
-    case 'up':
+    case "up":
       player.y -= pixels;
       break;
-    case 'down':
+    case "down":
       player.y += pixels;
       break;
-    case 'left':
+    case "left":
       player.x -= pixels;
       break;
-    case 'right':
+    case "right":
       player.x += pixels;
       break;
     default:
@@ -58,7 +58,9 @@ function checkCollisions() {
   const player = players.find((p) => p.id === socket.id);
   if (!player) return;
 
-  const collidedIndex = collectibles.findIndex((item) => player.collision(item));
+  const collidedIndex = collectibles.findIndex((item) =>
+    player.collision(item)
+  );
   if (collidedIndex !== -1) {
     const collidedItem = collectibles[collidedIndex];
     player.score += collidedItem.value;
@@ -88,7 +90,8 @@ function generateRandomCoordinates() {
 
 function calculateRank(playersArray) {
   const sortedPlayers = [...playersArray].sort((a, b) => b.score - a.score);
-  const currentPlayerIndex = sortedPlayers.findIndex((p) => p.id === socket.id) + 1;
+  const currentPlayerIndex =
+    sortedPlayers.findIndex((p) => p.id === socket.id) + 1;
   return `Rank: ${currentPlayerIndex}/${sortedPlayers.length}`;
 }
 
@@ -118,20 +121,17 @@ function addCollectible() {
 }
 
 function updateGameState() {
-
   context.clearRect(0, 0, canvas.width, canvas.height);
 
   players.forEach((player) => {
-
-    context.fillStyle = 'blue';
+    context.fillStyle = "blue";
     context.fillRect(player.x, player.y, 20, 20);
-    context.fillStyle = 'black';
+    context.fillStyle = "black";
     context.fillText(`Score: ${player.score}`, player.x, player.y - 10);
   });
 
   collectibles.forEach((collectible) => {
-
-    context.fillStyle = 'green';
+    context.fillStyle = "green";
     context.fillRect(collectible.x, collectible.y, 20, 20);
   });
 
@@ -143,34 +143,34 @@ function gameLoop() {
   requestAnimationFrame(gameLoop);
 }
 
-socket.on('connect', () => {
+socket.on("connect", () => {
   const { id } = socket;
   const startX = canvas.width / 2;
   const startY = canvas.height / 2;
   addPlayer(id, startX, startY);
 });
 
-socket.on('disconnect', () => {
+socket.on("disconnect", () => {
   const { id } = socket;
   removePlayer(id);
 });
 
-socket.on('playerMovement', ({ direction, pixels }) => {
+socket.on("playerMovement", ({ direction, pixels }) => {
   const player = players.find((p) => p.id === socket.id);
   if (player) {
     movePlayer(player, direction, pixels);
   }
 });
 
-socket.on('playerDisconnect', ({ id }) => {
+socket.on("playerDisconnect", ({ id }) => {
   removePlayer(id);
 });
 
-socket.on('collectibleAdded', () => {
+socket.on("collectibleAdded", () => {
   addCollectible();
 });
 
-socket.on('collectibleRemoved', ({ id }) => {
+socket.on("collectibleRemoved", ({ id }) => {
   const collectible = collectibles.find((c) => c.id === id);
   if (collectible) {
     removeCollectible(collectible);

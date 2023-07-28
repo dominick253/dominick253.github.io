@@ -8,16 +8,16 @@ class Player {
 
   movePlayer(dir, speed) {
     switch (dir) {
-      case 'up':
+      case "up":
         this.y -= speed;
         break;
-      case 'down':
+      case "down":
         this.y += speed;
         break;
-      case 'left':
+      case "left":
         this.x -= speed;
         break;
-      case 'right':
+      case "right":
         this.x += speed;
         break;
       default:
@@ -48,10 +48,10 @@ class Player {
     return false;
   }
 
-
   calculateRank(arr) {
     const sortedPlayers = [...arr].sort((a, b) => b.score - a.score);
-    const currentPlayerIndex = sortedPlayers.findIndex((p) => p.id === this.id) + 1;
+    const currentPlayerIndex =
+      sortedPlayers.findIndex((p) => p.id === this.id) + 1;
     return `Rank: ${currentPlayerIndex}/${sortedPlayers.length}`;
   }
 }
