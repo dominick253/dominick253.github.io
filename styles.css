@@ -487,6 +487,7 @@ hr {
 }
 
 #fileList li {
+  padding-right: 10px;
   flex: 0 0 calc(33.33% - 10px); /* Each list item will take up 33.33% of the container width with a small gap in between */
   margin: 5px; /* Creates a small gap between list items */
   text-align: center;

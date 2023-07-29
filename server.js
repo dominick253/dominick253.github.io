@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const socket = require("socket.io");
 const helmet = require("helmet");
 const portNum = 3000;
-const ipaddress = "172.17.0.10"; // 172.17.0.10  172.17.0.2   10.71.71.176  *********** Change me to localhost before going to actual server 172.17.0.4****************
+const ipaddress = "172.17.0.10"; // 172.17.0.10   10.71.71.176  *********** Change me to localhost before going to actual server 172.17.0.4****************
 const user = "dom";
 const path = require("path");
 const app = express();
@@ -126,20 +126,22 @@ app.route("/files").get(function (req, res) {
   res.sendFile(process.cwd() + "/files.html");
 });
 
-const connection = mysql.createConnection({
+// changed from connection to a pool and removed connection.connect
+const connection = mysql.createPool({
   host: ipaddress,
   user: user,
   password: process.env.DB_PASSWORD,
   database: "files",
+  connectionLimit: 10,
 });
 
-connection.connect((err) => {
-  if (err) {
-    console.error("Error connecting to the database:", err);
-  } else {
-    console.log("Connected to the MySQL database!");
-  }
-});
+// connection.connect((err) => {
+//   if (err) {
+//     console.error("Error connecting to the database:", err);
+//   } else {
+//     console.log("Connected to the MySQL database!");
+//   }
+// });
 
 // Route to handle file upload
 app.post("/upload", upload.single("file"), (req, res) => {

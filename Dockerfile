@@ -1,6 +1,10 @@
 # Use an official Node.js runtime as the base image
 FROM node:18.15.0
 
+# Install Nano (text editor)
+RUN apt-get update \
+    && apt-get install -y nano
+    
 # Set the working directory inside the container
 WORKDIR /app
 
