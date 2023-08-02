@@ -6,7 +6,7 @@ const bodyParser = require("body-parser");
 const socket = require("socket.io");
 const helmet = require("helmet");
 const portNum = 3000;
-const ipaddress = "172.17.0.10"; // 172.17.0.10   10.71.71.176  *********** Change me to localhost before going to actual server 172.17.0.4****************
+const ipaddress = "172.18.0.22"; // 172.17.0.10   10.71.71.176  *********** Change me to localhost before going to actual server 172.17.0.4****************
 const user = "dom";
 const path = require("path");
 const app = express();
@@ -135,13 +135,6 @@ const connection = mysql.createPool({
   connectionLimit: 10,
 });
 
-// connection.connect((err) => {
-//   if (err) {
-//     console.error("Error connecting to the database:", err);
-//   } else {
-//     console.log("Connected to the MySQL database!");
-//   }
-// });
 
 // Route to handle file upload
 app.post("/upload", upload.single("file"), (req, res) => {
