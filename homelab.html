@@ -106,7 +106,7 @@
         Accompanying it is a host of robust applications and services that
         amplify the capabilities of my home lab:
       </p>
-
+      <br />
       <ol class="centered-list">
         <li>
           <strong>Uptime Kuma:</strong> A beautiful, self-hosted monitoring tool
@@ -175,7 +175,6 @@
     </main>
     <br />
     <br />
-    <hr />
     <br />
     <h2>What's Next?</h2>
     <br />
@@ -192,6 +191,186 @@
       site or get in touch. Together, we can demystify the tech and uncover the
       fun in these fantastic projects.
     </p>
+    <br />
+    <hr />
+    <br />
+
+    <h2>My Home Lab's New Evolution</h2>
+    <br />
+    <p>
+      So, I’ve made a few changes since the last update, and I'm excited to
+      share them with you. Funny enough, I find myself with another laptop with
+      a broken keyboard - this time a 2015 ASUS ROG gaming laptop with a i7
+      4720HQ CPU and 24GB ram with a 965M Nvidia graphics card. I wonder if it's
+      a sign from the universe that I'm meant to breathe new life into discarded
+      tech. 🤣
+    </p>
+
+    <img
+      class="img"
+      src="assets/ASUS-ROG-Server.jpg"
+      alt="ASUS ROG gaming laptop running Proxmox"
+    />
+    <br />
+
+    <h2>Stepping Up with Proxmox</h2>
+    <br />
+
+    <p>
+      I finally took the plunge and installed Proxmox on the ASUS ROG. Instead
+      of transferring over the old Ubuntu Server, I felt the urge to start
+      fresh, giving me the opportunity to refine my setup. A key improvement
+      I’ve made is in the networking realm: I’ve established a Docker network
+      and assigned all my containers static IP addresses. This straightforward
+      change made a world of difference in streamlining my setup, especially
+      when interfacing with the Cloudflare tunnel. No more constant IP updates
+      after every reboot!
+    </p>
+    <img
+      class="img"
+      src="assets/Proxmox-Home-Screen.jpeg"
+      alt="Proxmox home screen"
+    />
+    <h2>For the Gamers</h2>
+    <br />
+
+    <p>
+      To add a splash of fun to my home lab, I’ve spun up servers for "7 Days to
+      Die" and "GTA 5". Now, my friends and I have a dedicated playground for
+      our gaming sessions. It’s been a blast hosting these, and it’s just
+      another testament to what you can achieve with a home lab.
+    </p>
+    <img
+      class="img"
+      src="assets/Proxmox-7days-server.jpeg"
+      alt="Game server dashboard"
+    />
+
+    <h2>Windows in My Home Lab? Yes!</h2>
+    <br />
+
+    <p>
+      While I’m a huge fan of open-source platforms, I must admit some
+      applications just feel more at home on Windows. So, I’ve allocated a slice
+      of my resources to a Windows 10 VM. It’s strictly business (okay, maybe a
+      little play), serving some applications that either only work on Windows
+      or just perform better on it.
+    </p>
+    <img
+      class="img"
+      src="assets/Proxmox-Windows10.jpeg"
+      alt="Game server dashboard"
+    />
+
+    <h2>Security & Accessibility</h2>
+    <br />
+
+    <p>
+      With my expanding suite of services and tools, secure yet convenient
+      remote access became a necessity. I'm currently in the process of setting
+      up a WireGuard VPN. This way, accessing my home network and all its
+      offerings will be seamless and secure, even when I’m miles away.
+    </p>
+    <br />
+    <br />
+
+    <h2>The Versatility of VS Code Server</h2>
+    <br />
+    <p>
+      VS Code, the popular code editor from Microsoft, isn't just confined to
+      desktop environments. Using a linuxserver.io docker container I set up a
+      VS Code Server on my Ubuntu server. This has completely revolutionized the
+      way I work on projects!
+    </p>
+    <img
+      class="img"
+      src="assets/Vs-Code-Server.jpeg"
+      alt="VS Code Server UI on Ubuntu"
+    />
+
+    <h2>By setting up VS Code Server, I've gained several advantages:</h2>
+    <br />
+    <ol class="centered-list">
+      <br />
+
+      <li>
+        <strong>Power Consumption:</strong> <br />Running intensive tasks on a
+        server rather than a laptop means significant savings in battery life,
+        especially when on the go.
+      </li>
+      <br />
+
+      <li>
+        <strong>Performance:</strong><br />
+        My Ubuntu server, being more powerful than many standard laptops or
+        mobile devices, can handle heavier workloads, compile tasks, or run
+        resource-intensive applications effortlessly.
+      </li>
+      <br />
+
+      <li>
+        <strong>Consistency:</strong> <br />No matter which device I connect
+        from, be it a high-end workstation or a modest mobile device, I have a
+        consistent development environment ready and waiting.
+      </li>
+      <br />
+
+      <li>
+        <strong>Accessibility:</strong><br />
+        All I need is an Internet connection, and I can continue my work from
+        anywhere in the world, accessing all my tools, extensions, and
+        configurations exactly how I left them.
+      </li>
+    </ol>
+    <br />
+    <p>
+      This setup has essentially given me a portable, high-powered, and
+      consistent development environment without being tethered to any specific
+      hardware. Now, even if I'm armed just with a tablet or a lightweight
+      laptop, I can tap into the full power of my home server, code as if I'm on
+      a powerful workstation, and save my device's resources for other tasks.
+    </p>
+    <br />
+
+    <p>
+      With the combination of the Ubuntu server's reliability and VS Code's
+      flexibility, my development workflow is smoother, faster, and more
+      versatile than ever. If you're looking to break the confines of
+      traditional development environments, I'd highly recommend giving VS Code
+      Server a shot!
+    </p>
+    <br />
+
+    <h2>What's Next?</h2>
+    <br />
+
+    <p>
+      The adventure deepens. Next on my list? Channeling the power of the 965M
+      GPU into my Windows 10 VM for some Parsec remote gaming. While the 965M
+      may not be the titan of graphics, it packs enough punch to handle most
+      contemporary games—even if at more modest settings. Compared to my main
+      laptop's AMD 5500u, the 965M stands out as a gaming powerhouse, promising
+      not just enhanced performance but also a significant boost in battery
+      life.
+      <br />
+      <br>
+      From those early days of wrestling with a fickle router, my journey has
+      evolved into crafting a versatile home server system. The real joy,
+      though? Sharing these tales of trials and triumphs with you. Perhaps it
+      might spark your own voyage into the tech realm. So, here's to uncovering
+      new gems, overcoming fresh challenges, and fostering an insatiable thirst
+      for knowledge. Browse the resources here, pose questions, or relay your
+      tales. Together, let’s demystify tech and inject a hefty dose of fun into
+      the process!
+    </p>
+    <br />
+    <img
+      class="img"
+      src="assets/Proxmox-ubuntu-server.jpeg"
+      alt="My latest home lab setup"
+    />
+    <br />
+
     <br />
     <br />
     <br />

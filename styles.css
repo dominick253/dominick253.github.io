@@ -27,9 +27,16 @@ li {
 
 .centered-list {
   display: block;
-  width: 80vw;
+  width: 85vw;
+  max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
+  padding-left: 0; /* Remove padding */
+  list-style-position: inside; 
+}
+
+.centered-list li {
+  margin-left: 0; /* Remove default left margin on li elements */
 }
 
 p {
@@ -37,7 +44,7 @@ p {
   display: block;
   justify-content: center;
   margin: 0 auto;
-  max-width: 1200px;
+  max-width: 1000px;
   padding-left: 20px;
   padding-right: 20px;
 }
@@ -545,7 +552,13 @@ hr {
     width: 85vw;
     margin-left: auto;
     margin-right: auto;
-  }
+    padding-left: 0; /* Remove padding */
+    list-style-position: inside; /* To keep numbers or bullets inside the content box */
+}
+
+.centered-list li {
+    margin-left: 0; /* Remove default left margin on li elements */
+}
 
   #name {
     font-size: 2em;
