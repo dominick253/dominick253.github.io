@@ -8,6 +8,7 @@ const helmet = require("helmet");
 const portNum = 3000;
 const ipaddress = "172.18.0.22"; // 172.18.0.22   10.71.71.197  *********** Change me to 172.18.0.22 ip before going to actual server ****************
 const user = "dom";
+const password = process.env.DB_PASSWORD;
 const path = require("path");
 const app = express();
 const mysql = require("mysql2");
@@ -130,7 +131,7 @@ app.route("/files").get(function (req, res) {
 const connection = mysql.createPool({
   host: ipaddress,
   user: user,
-  password: process.env.DB_PASSWORD,
+  password: password,
   database: "files",
   connectionLimit: 10,
 });
