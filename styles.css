@@ -32,7 +32,7 @@ li {
   margin-left: auto;
   margin-right: auto;
   padding-left: 0; /* Remove padding */
-  list-style-position: inside; 
+  list-style-position: inside;
 }
 
 .centered-list li {
@@ -58,7 +58,7 @@ img {
   display: block;
   margin: 0 auto;
   max-height: 70vh;
-  max-width: 70vw;
+  max-width: 1000px;
   margin-top: 20px;
   margin-bottom: 60px;
 }
@@ -554,11 +554,11 @@ hr {
     margin-right: auto;
     padding-left: 0; /* Remove padding */
     list-style-position: inside; /* To keep numbers or bullets inside the content box */
-}
+  }
 
-.centered-list li {
+  .centered-list li {
     margin-left: 0; /* Remove default left margin on li elements */
-}
+  }
 
   #name {
     font-size: 2em;

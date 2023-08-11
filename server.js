@@ -6,8 +6,8 @@ const bodyParser = require("body-parser");
 const socket = require("socket.io");
 const helmet = require("helmet");
 const portNum = 3000;
-const ipaddress = "172.18.0.22"; // 172.18.0.22   10.71.71.197  *********** Change me to 172.18.0.22 ip before going to actual server ****************
-const user = "dom";
+const ipaddress = "10.71.71.115"; // 172.18.0.22   10.71.71.197  *********** Change me to 172.18.0.22 ip before going to actual server ****************
+const user = "adminer";
 const password = process.env.DB_PASSWORD;
 const path = require("path");
 const app = express();
@@ -41,66 +41,66 @@ io.on("connection", function (socket) {
   });
 });
 
-app.use((req, res, next) => {
-  res.setHeader("Surrogate-Control", "no-store");
-  res.setHeader(
-    "Cache-Control",
-    "no-store, no-cache, must-revalidate, proxy-revalidate"
-  );
-  res.setHeader("Pragma", "no-cache");
-  res.setHeader("Expires", "0");
-  next();
-});
+// app.use((req, res, next) => {
+//   res.setHeader("Surrogate-Control", "no-store");
+//   res.setHeader(
+//     "Cache-Control",
+//     "no-store, no-cache, must-revalidate, proxy-revalidate"
+//   );
+//   res.setHeader("Pragma", "no-cache");
+//   res.setHeader("Expires", "0");
+//   next();
+// });
 
-app.use(
-  helmet({
-    contentSecurityPolicy: {
-      directives: {
-        defaultSrc: ["'self'"],
-        styleSrc: [
-          "'self'",
-          "maxcdn.bootstrapcdn.com",
-          "https://fonts.googleapis.com",
-          "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css",
-          "'unsafe-inline'",
-          "https://use.fontawesome.com",
-        ],
-        scriptSrc: [
-          "'self'",
-          "'unsafe-eval'",
-          "cdnjs.cloudflare.com",
-          "'unsafe-inline'",
-          "unpkg.com",
-          "https://use.fontawesome.com",
-          "https://code.jquery.com/jquery-3.5.1.min.js",
-        ],
-        fontSrc: [
-          "'self'",
-          "https://fonts.gstatic.com",
-          "https://use.fontawesome.com",
-          "https://cdnjs.cloudflare.com",
-        ],
-        imgSrc: ["'self'", "https://i.imgur.com", "blob:", "data:"],
-        frameSrc: [
-          "'self'",
-          "https://www.youtube.com",
-          "https://www.youtube-nocookie.com",
-        ],
-        mediaSrc: ["'self'", "https://s3.amazonaws.com", "blob:", "data:"],
-      },
-    },
-    dnsPrefetchControl: false,
-    expectCt: { maxAge: 0 },
-    frameguard: { action: "sameorigin" },
-    hidePoweredBy: { setTo: "PHP 7.4.3" },
-    hsts: { maxAge: 0 },
-    ieNoOpen: true,
-    noSniff: true,
-    permittedCrossDomainPolicies: true,
-    referrerPolicy: { policy: "no-referrer" },
-    xssFilter: true,
-  })
-);
+// app.use(
+//   helmet({
+//     contentSecurityPolicy: {
+//       directives: {
+//         defaultSrc: ["'self'"],
+//         styleSrc: [
+//           "'self'",
+//           "maxcdn.bootstrapcdn.com",
+//           "https://fonts.googleapis.com",
+//           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css",
+//           "'unsafe-inline'",
+//           "https://use.fontawesome.com",
+//         ],
+//         scriptSrc: [
+//           "'self'",
+//           "'unsafe-eval'",
+//           "cdnjs.cloudflare.com",
+//           "'unsafe-inline'",
+//           "unpkg.com",
+//           "https://use.fontawesome.com",
+//           "https://code.jquery.com/jquery-3.5.1.min.js",
+//         ],
+//         fontSrc: [
+//           "'self'",
+//           "https://fonts.gstatic.com",
+//           "https://use.fontawesome.com",
+//           "https://cdnjs.cloudflare.com",
+//         ],
+//         imgSrc: ["'self'", "https://i.imgur.com", "blob:", "data:"],
+//         frameSrc: [
+//           "'self'",
+//           "https://www.youtube.com",
+//           "https://www.youtube-nocookie.com",
+//         ],
+//         mediaSrc: ["'self'", "https://s3.amazonaws.com", "blob:", "data:"],
+//       },
+//     },
+//     dnsPrefetchControl: false,
+//     expectCt: { maxAge: 0 },
+//     frameguard: { action: "sameorigin" },
+//     hidePoweredBy: { setTo: "PHP 7.4.3" },
+//     hsts: { maxAge: 0 },
+//     ieNoOpen: true,
+//     noSniff: true,
+//     permittedCrossDomainPolicies: true,
+//     referrerPolicy: { policy: "no-referrer" },
+//     xssFilter: true,
+//   })
+// );
 
 app.use("/public", express.static(process.cwd() + "/public"));
 
