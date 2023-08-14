@@ -1,4 +1,3 @@
-//test for ansible log file.
 const dotenv = require("dotenv");
 dotenv.config();
 
