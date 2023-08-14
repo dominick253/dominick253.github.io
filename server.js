@@ -1,4 +1,3 @@
-//Couldn't help myself... had to test it one more time!!!
 const dotenv = require("dotenv");
 dotenv.config();
 
