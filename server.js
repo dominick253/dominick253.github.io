@@ -1,6 +1,4 @@
-// Test time and date in log file.
-// Test
-// 3
+
 const dotenv = require("dotenv");
 dotenv.config();
 
