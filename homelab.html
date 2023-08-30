@@ -100,7 +100,9 @@
       <h2>Current Status</h2>
       <p>
         Today, my website,
-        <a href="https://portfolio.dominickp.com" style="text-decoration: underline"
+        <a
+          href="https://portfolio.dominickp.com"
+          style="text-decoration: underline"
           >Dominickp.com</a
         >, stands proudly hosted on my home server. But it's not alone.
         Accompanying it is a host of robust applications and services that
@@ -262,18 +264,6 @@
       alt="Game server dashboard"
     />
 
-    <h2>Security & Accessibility</h2>
-    <br />
-
-    <p>
-      With my expanding suite of services and tools, secure yet convenient
-      remote access became a necessity. I'm currently in the process of setting
-      up a WireGuard VPN. This way, accessing my home network and all its
-      offerings will be seamless and secure, even when I’m miles away.
-    </p>
-    <br />
-    <br />
-
     <h2>The Versatility of VS Code Server</h2>
     <br />
     <p>
@@ -364,13 +354,59 @@
       the process!
     </p>
     <br />
+
     <img
       class="img"
       src="assets/Proxmox-ubuntu-server2.jpeg"
       alt="My latest home lab setup"
     />
     <br />
+
+    <h2>Continuous Integration</h2>
     <br />
+    <p>
+      After countless hours spent manually updating my website on the server,
+      I've come to a powerful realization: the importance of CI/CD (Continuous
+      Integration/Continuous Deployment) cannot be overstated. Driven by this
+      newfound understanding, I decided to leverage my recent experience with
+      Ansible to develop a webhook listener specifically for my website's GitHub
+      repository.
+    </p>
+    <br>
+    <p>
+      Here's how the workflow unfolds: Whenever I push changes to the main
+      branch of my GitHub repo, it automatically triggers GitHub to send a
+      notification to a server hosted on an Ansible LXC container within my
+      Proxmox setup. This server then executes an Ansible playbook designed to
+      clone the repo, run npm install, and restart the server—all in a seamless,
+      automated fashion.
+      </p>
+      <br>
+      <p>
+      What's truly remarkable is Ansible's intelligent decision-making
+      capabilities. For instance, it knows not to tamper with the .env file if
+      it hasn't been modified in the commit. This feature ensures that only the
+      altered files are updated, resulting in far more efficient deployments
+      that don't unnecessarily disrupt every component of the website.
+      </p>
+      <br>
+      <p>
+      The brilliance of incorporating Ansible into my CI workflow has been
+      nothing short of a revelation. While the initial setup required some
+      legwork, the scalability is astounding. With a simple copy-paste of the
+      code, a port number change, and the addition of a new webhook, I can
+      effortlessly extend this CI pipeline to as many services as I want.
+      </p>
+      <br>
+      <p>
+      I can't help but imagine the transformative impact this could have on
+      large corporations. They could automate and streamline the management of
+      multiple services that are in a state of constant evolution, thereby
+      saving countless hours of tedious, manual work. This is automation at its
+      finest, and I'm thrilled to be harnessing its power.
+    </p>
+<br>
+<br>
     <div id="contact-div">
       <h2 id="quote-text">Learning every day.</h2>
       <div id="contact-links">
