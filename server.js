@@ -1,5 +1,4 @@
-//Test for webhook listener
-//Test #2
+
 const dotenv = require("dotenv");
 dotenv.config();
 
