@@ -1,379 +1,349 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dominick Pescetto's Homelab</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="/server.js" type="module"></script>
-    <link rel="stylesheet" href="/styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-  </head>
-  <header>
-    <div class="navbar">
-      <navbar id="navbar" class="nav">
-        <ul class="nav-links" attribute="no">
-          <li>
-            <a class="nav-list" href="/index.html#name-div-parent">Home</a>
-          </li>
-          <li><a class="nav-list" href="/projects">Projects</a></li>
-          <li><a class="nav-list" href="/videos">Videos</a></li>
-          <li><a class="nav-list" href="/files">Files</a></li>
-          <li><a class="nav-list" href="/homelab">Homelab</a></li>
-          <li><a class="nav-list" href="#contact-div">Contact</a></li>
-        </ul>
-      </navbar>
-    </div>
-  </header>
 
-  <body>
-    <br />
-    <br />
-    <main>
-      <br>
-      <h2>Welcome to My Home Lab Journey!</h2>
-      <hr />
-      <br />
-
-      <h2>My Origin Story</h2>
-      <br />
-
-      <p>
-        It all started when my old WiFi router started acting up. Annoyed yet
-        intrigued by the issue, I decided to dive into the world of network
-        hardware and software management to fix the problem. As a programming
-        student at the time, I had a 2014 HP laptop with a broken keyboard just
-        sitting around. Instead of seeing it as e-waste, I realized its
-        potential to be reborn as a network guardian for my home. The first
-        step? Installing OpnSense on it - a FreeBSD based open-source software
-        that delivers easy-to-use, robust firewall and routing capabilities.
-      </p>
-      <img
-        class="img"
-        src="assets/Opnsense router install - comp3.jpeg"
-        alt="Red laptop open running Opensense"
-      />
-      <div id="overlay" style="display: none">
-        <button id="close-btn" style="float: right">X</button>
-        <img id="overlay-image" src="" alt="Fullscreen image" />
-      </div>
-      <br />
-
-      <h2>Evolving the Home Lab</h2>
-      <p>
-        After finishing my programming course, I felt the need to deploy a
-        website from scratch - to bring into existence what was only theoretical
-        knowledge till then. To replace the laptop-as-router setup and optimize
-        my home network, I purchased a Raspberry Pi 4 B - a small but mighty
-        device perfect for this task. Installing OpenWRT on it, I transformed
-        this credit-card-sized computer into a fully capable router that could
-        handle my network traffic with ease.
-      </p>
-      <br />
-      <img
-        class="img"
-        id="pi"
-        src="assets/Pi OpenWRT Router - comp2.jpeg"
-        alt="OpenWRT router with a 3d printed case."
-      />
-
-      <h2>The Server-side Story</h2>
-
-      <p>
-        With the network issue sorted and the Raspberry Pi working as a router,
-        the old laptop got a new lease of life - this time as a server. I
-        installed Ubuntu Server on it and set about constructing my website,
-        brick by digital brick. However, I soon realized that containerization
-        would simplify both development and maintenance, making the transition
-        between my development laptop and the server a breeze. Enter Docker and
-        Portainer: these tools helped me create and manage my containers
-        efficiently, and the difference was night and day!
-      </p>
-      <img
-        class="img"
-        src="assets/Red Laptop Vertical Stand - comp2 - cropped.jpeg"
-        alt="Red Ubuntu Server Laptop Open"
-      />
-
-      <h2>Status - 8-14-23</h2>
-      <p>
-        Today, my website,
-        <a
-          href="https://portfolio.dominickp.com"
-          style="text-decoration: underline"
-          >Dominickp.com</a
-        >, stands proudly hosted on my home server. But it's not alone.
-        Accompanying it is a host of robust applications and services that
-        amplify the capabilities of my home lab:
-      </p>
-      <br />
-      <ol class="centered-list">
+<head>
+  <meta charset="UTF-8" />
+  <title>Dominick Pescetto's Homelab</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <script src="/server.js" type="module"></script>
+  <link rel="stylesheet" href="/styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+</head>
+<header>
+  <div class="navbar">
+    <navbar id="navbar" class="nav">
+      <ul class="nav-links" attribute="no">
         <li>
-          <strong>Uptime Kuma:</strong> A beautiful, self-hosted monitoring tool
-          that helps me keep track of my server's health and performance.
+          <a class="nav-list" href="/index.html#name-div-parent">Home</a>
         </li>
-        <img
-          class="img"
-          src="assets/Uptime Kuma - comp2.jpeg"
-          alt="Uptime Kuma"
-        />
+        <li><a class="nav-list" href="/projects">Projects</a></li>
+        <li><a class="nav-list" href="/videos">Videos</a></li>
+        <li><a class="nav-list" href="/files">Files</a></li>
+        <li><a class="nav-list" href="/homelab">Homelab</a></li>
+        <li><a class="nav-list" href="#contact-div">Contact</a></li>
+      </ul>
+    </navbar>
+  </div>
+</header>
 
-        <li>
-          <strong>Jellyfin:</strong> This open-source media system is my go-to
-          for organizing and streaming my multimedia content.
-        </li>
-        <img class="img" src="assets/Jellyfin - comp2.jpeg" alt="Jellyfin" />
-
-        <li>
-          <strong>Nextcloud:</strong> File sharing is a breeze with Nextcloud.
-          It offers a safe, private, and convenient solution for syncing and
-          sharing my files.
-        </li>
-        <img class="img" src="assets/Nextcloud - comp2.jpeg" alt="Nextcloud" />
-
-        <li>
-          <strong>Heimdall Application Dashboard:</strong> This elegant solution
-          helps me keep all my applications organized under one roof. It acts as
-          a homepage for all the apps running on my server, making access quick
-          and straightforward.
-        </li>
-        <img class="img" src="assets/Heimdall - comp2.jpeg" alt="Heimdall" />
-
-        <li>
-          <strong>CasaOS:</strong> A relatively new player in my lab, CasaOS
-          simplifies my home cloud and smart home experience. It's an innovative
-          IoT (Internet of Things) home server OS that provides a unified
-          platform for smart home management.
-        </li>
-        <img class="img" src="assets/CasaOs - comp2.jpeg" alt="CasaOs" />
-
-        <li>
-          <strong>Portainer:</strong> This powerful open-source tool allows me
-          to manage my Docker environments with ease, making containerization an
-          effortless endeavor.
-        </li>
-        <img class="img" src="assets/Portainer - comp2.jpeg" alt="Portainer" />
-      </ol>
-      <br />
-      <h2>Cloudflare Tunnel</h2>
-      <br />
-      <p>
-        To overcome the challenge of a dynamic IP address issued by my ISP, I've
-        set up a Cloudflare tunnel. This keeps my external connections running
-        smoothly, no matter how many times my ISP decides to shuffle the IP
-        deck.
-      </p>
-    </main>
-    <br />
-    <br />
-
+<body>
+  <br />
+  <br />
+  <main>
+    <br>
+    <h2>Welcome to My Home Lab Journey!</h2>
     <hr />
     <br />
 
-    <h2>My Home Lab's New Evolution - 8-21-23</h2>
-    <br />
-    <p>
-      So, I’ve made a few changes since the last update, and I'm excited to
-      share them with you. Funny enough, I find myself with another laptop with
-      a broken keyboard - this time a 2015 ASUS ROG gaming laptop with a i7
-      4720HQ CPU and 24GB ram with a 965M Nvidia graphics card. I wonder if it's
-      a sign from the universe that I'm meant to breathe new life into discarded
-      tech. 🤣
-    </p>
-
-    <img
-      class="img"
-      src="assets/ASUS-ROG-Server2.jpeg"
-      alt="ASUS ROG gaming laptop running Proxmox"
-    />
-    <br />
-
-    <h2>Stepping Up with Proxmox</h2>
+    <h2>My Origin Story</h2>
     <br />
 
     <p>
-      I finally took the plunge and installed Proxmox on the ASUS ROG. Instead
-      of transferring over the old Ubuntu Server, I felt the urge to start
-      fresh, giving me the opportunity to refine my setup. A key improvement
-      I’ve made is in the networking realm: I’ve established a Docker network
-      and assigned all my containers static IP addresses. This straightforward
-      change made a world of difference in streamlining my setup, especially
-      when interfacing with the Cloudflare tunnel. No more constant IP updates
-      after every reboot!
+      It all started when my old WiFi router started acting up. Annoyed yet
+      intrigued by the issue, I decided to dive into the world of network
+      hardware and software management to fix the problem. As a programming
+      student at the time, I had a 2014 HP laptop with a broken keyboard just
+      sitting around. Instead of seeing it as e-waste, I realized its
+      potential to be reborn as a network guardian for my home. The first
+      step? Installing OpnSense on it - a FreeBSD based open-source software
+      that delivers easy-to-use, robust firewall and routing capabilities.
     </p>
-    <img
-      class="img"
-      src="assets/Proxmox-Home-Screen2.jpeg"
-      alt="Proxmox home screen"
-    />
-    <h2>For the Gamers</h2>
-    <br />
-
-    <p>
-      To add a splash of fun to my home lab, I’ve spun up servers for "7 Days to
-      Die" and "GTA 5". Now, my friends and I have a dedicated playground for
-      our gaming sessions. It’s been a blast hosting these, and it’s just
-      another testament to what you can achieve with a home lab.
-    </p>
-    <img
-      class="img"
-      src="assets/Proxmox-7days-server2.jpeg"
-      alt="Game server dashboard"
-    />
-
-    <h2>Windows in My Home Lab? Yes!</h2>
-    <br />
-
-    <p>
-      While I’m a huge fan of open-source platforms, I must admit some
-      applications just feel more at home on Windows. So, I’ve allocated a slice
-      of my resources to a Windows 10 VM. It’s strictly business (okay, maybe a
-      little play), serving some applications that either only work on Windows
-      or just perform better on it.
-    </p>
-    <img
-      class="img"
-      src="assets/Proxmox-Windows102.jpeg"
-      alt="Game server dashboard"
-    />
-
-    <h2>The Versatility of VS Code Server</h2>
-    <br />
-    <p>
-      VS Code, the popular code editor from Microsoft, isn't just confined to
-      desktop environments. Using a linuxserver.io docker container I set up a
-      VS Code Server on my Ubuntu server. This has completely revolutionized the
-      way I work on projects!
-    </p>
-    <img
-      class="img"
-      src="assets/Vs-Code-Server2.jpeg"
-      alt="VS Code Server UI on Ubuntu"
-    />
-    <h2>Continuous Integration</h2>
-    <br />
-    <p>
-      After countless hours spent manually updating my website on the server,
-      I've come to a powerful realization: the importance of CI/CD (Continuous
-      Integration/Continuous Deployment) cannot be overstated. Driven by this
-      newfound understanding, I decided to leverage my recent experience with
-      Ansible to develop a webhook listener specifically for my website's GitHub
-      repository.
-    </p>
-    <br />
-    <p>
-      Here's how the workflow unfolds: Whenever I push changes to the main
-      branch of my GitHub repo, it automatically triggers GitHub to send a
-      notification to a server hosted on an Ansible LXC container within my
-      Proxmox setup. This server then executes an Ansible playbook designed to
-      clone the repo, run npm install, and restart the server—all in a seamless,
-      automated fashion.
-    </p>
-    <br />
-    <p>
-      What's truly remarkable is Ansible's intelligent decision-making
-      capabilities. For instance, it knows not to tamper with the .env file if
-      it hasn't been modified in the commit. This feature ensures that only the
-      altered files are updated, resulting in far more efficient deployments
-      that don't unnecessarily disrupt every component of the website.
-    </p>
-    <br />
-    <p>
-      The brilliance of incorporating Ansible into my CI workflow has been
-      nothing short of a revelation. While the initial setup required some
-      legwork, the scalability is astounding. With a simple copy-paste of the
-      code, a port number change, and the addition of a new webhook, I can
-      effortlessly extend this CI pipeline to as many services as I want.
-    </p>
-    <br />
-    <p>
-      I can't help but imagine the transformative impact this could have on
-      large corporations. They could automate and streamline the management of
-      multiple services that are in a state of constant evolution, thereby
-      saving countless hours of tedious, manual work. This is automation at its
-      finest, and I'm thrilled to be harnessing its power.
-    </p>
-    <br />
-
-    <h2>Proxmox and Raspberry Pi Clusters</h2>
-    <br />
-    <p>
-      Are you as captivated by clustering as I am? If so, you'll be excited to
-      hear about my latest project: setting up additional Proxmox nodes to
-      achieve high availability (HA). I've had my fair share of experience with
-      Kubernetes clusters, but they've been confined to virtual machines—until
-      now.
-    </p>
-    <br />
-    <p>
-      Taking inspiration from tech wizard Jeff Geerling, I've started exploring
-      the possibility of building a Raspberry Pi 4B cluster. While these nifty
-      devices aren't widely available just yet, the situation is improving
-      steadily. Soon, I hope to create a tangible, real-world cluster that
-      brings my networking dreams to life!
-    </p>
-    <br />
-    <p>
-      Now, you might wonder, why not virtualize my router using Proxmox and
-      repurpose my existing Raspberry Pi 4B router into another Proxmox node? It
-      sounds like a fantastic idea, but here's the catch: if my internet
-      connection fails for even a moment, I risk sparking a household mutiny!
-    </p>
-    <br />
-    <p>
-      So, as you can see, the journey toward clustering and high availability is
-      full of thrills and challenges. Stick around as I continue to share
-      updates on these exciting endeavors!
-    </p>
-
-    <br />
-    <div id="contact-div">
-      <h2 id="quote-text">Learning every day.</h2>
-      <div id="contact-links">
-        <ul>
-          <li class="contact-link-id" id="youtube">
-            <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li class="contact-link-id" id="github">
-            <a href="https://github.com/dominick253?tab=repositories">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-          <li class="contact-link-id" id="freecodecamp">
-            <a href="https://www.freecodecamp.org/Dominick253">
-              <i class="fab fa-free-code-camp"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+    <img class="img" src="assets/Opnsense router install - comp3.jpeg" alt="Red laptop open running Opensense" />
+    <div id="overlay" style="display: none">
+      <button id="close-btn" style="float: right">X</button>
+      <img id="overlay-image" src="" alt="Fullscreen image" />
     </div>
-    <script>
-      window.addEventListener("DOMContentLoaded", (event) => {
-        const clickableImages = document.querySelectorAll(".img");
+    <br />
 
-        clickableImages.forEach((image) => {
-          image.addEventListener("click", function () {
-            document.getElementById("overlay").style.display = "block";
-            document.getElementById("overlay-image").src = this.src;
-          });
-        });
+    <h2>Evolving the Home Lab</h2>
+    <p>
+      After finishing my programming course, I felt the need to deploy a
+      website from scratch - to bring into existence what was only theoretical
+      knowledge till then. To replace the laptop-as-router setup and optimize
+      my home network, I purchased a Raspberry Pi 4 B - a small but mighty
+      device perfect for this task. Installing OpenWRT on it, I transformed
+      this credit-card-sized computer into a fully capable router that could
+      handle my network traffic with ease.
+    </p>
+    <br />
+    <img class="img" id="pi" src="assets/Pi OpenWRT Router - comp2.jpeg" alt="OpenWRT router with a 3d printed case." />
 
-        document
-          .getElementById("close-btn")
-          .addEventListener("click", function () {
-            document.getElementById("overlay").style.display = "none";
-          });
+    <h2>The Server-side Story</h2>
 
-        document.addEventListener("keydown", function (event) {
-          if (event.key === "Escape") {
-            document.getElementById("overlay").style.display = "none";
-          }
+    <p>
+      With the network issue sorted and the Raspberry Pi working as a router,
+      the old laptop got a new lease of life - this time as a server. I
+      installed Ubuntu Server on it and set about constructing my website,
+      brick by digital brick. However, I soon realized that containerization
+      would simplify both development and maintenance, making the transition
+      between my development laptop and the server a breeze. Enter Docker and
+      Portainer: these tools helped me create and manage my containers
+      efficiently, and the difference was night and day!
+    </p>
+    <img class="img" src="assets/Red Laptop Vertical Stand - comp2 - cropped.jpeg"
+      alt="Red Ubuntu Server Laptop Open" />
+
+    <h2>Status - 8-14-23</h2>
+    <p>
+      Today, my website,
+      <a href="https://portfolio.dominickp.com" style="text-decoration: underline">Dominickp.com</a>, stands proudly
+      hosted on my home server. But it's not alone.
+      Accompanying it is a host of robust applications and services that
+      amplify the capabilities of my home lab:
+    </p>
+    <br />
+    <ol class="centered-list">
+      <li>
+        <strong>Uptime Kuma:</strong> A beautiful, self-hosted monitoring tool
+        that helps me keep track of my server's health and performance.
+      </li>
+      <img class="img" src="assets/Uptime Kuma - comp2.jpeg" alt="Uptime Kuma" />
+
+      <li>
+        <strong>Jellyfin:</strong> This open-source media system is my go-to
+        for organizing and streaming my multimedia content.
+      </li>
+      <img class="img" src="assets/Jellyfin - comp2.jpeg" alt="Jellyfin" />
+
+      <li>
+        <strong>Nextcloud:</strong> File sharing is a breeze with Nextcloud.
+        It offers a safe, private, and convenient solution for syncing and
+        sharing my files.
+      </li>
+      <img class="img" src="assets/Nextcloud - comp2.jpeg" alt="Nextcloud" />
+
+      <li>
+        <strong>Heimdall Application Dashboard:</strong> This elegant solution
+        helps me keep all my applications organized under one roof. It acts as
+        a homepage for all the apps running on my server, making access quick
+        and straightforward.
+      </li>
+      <img class="img" src="assets/Heimdall - comp2.jpeg" alt="Heimdall" />
+
+      <li>
+        <strong>CasaOS:</strong> A relatively new player in my lab, CasaOS
+        simplifies my home cloud and smart home experience. It's an innovative
+        IoT (Internet of Things) home server OS that provides a unified
+        platform for smart home management.
+      </li>
+      <img class="img" src="assets/CasaOs - comp2.jpeg" alt="CasaOs" />
+
+      <li>
+        <strong>Portainer:</strong> This powerful open-source tool allows me
+        to manage my Docker environments with ease, making containerization an
+        effortless endeavor.
+      </li>
+      <img class="img" src="assets/Portainer - comp2.jpeg" alt="Portainer" />
+    </ol>
+    <br />
+    <h2>Cloudflare Tunnel</h2>
+    <br />
+    <p>
+      To overcome the challenge of a dynamic IP address issued by my ISP, I've
+      set up a Cloudflare tunnel. This keeps my external connections running
+      smoothly, no matter how many times my ISP decides to shuffle the IP
+      deck.
+    </p>
+  </main>
+  <br />
+  <br />
+
+  <hr />
+  <br />
+
+  <h2>My Home Lab's New Evolution - 8-21-23</h2>
+  <br />
+  <p>
+    So, I’ve made a few changes since the last update, and I'm excited to
+    share them with you. Funny enough, I find myself with another laptop with
+    a broken keyboard - this time a 2015 ASUS ROG gaming laptop with a i7
+    4720HQ CPU and 24GB ram with a 965M Nvidia graphics card. I wonder if it's
+    a sign from the universe that I'm meant to breathe new life into discarded
+    tech. 🤣
+  </p>
+
+  <img class="img" src="assets/ASUS-ROG-Server2.jpeg" alt="ASUS ROG gaming laptop running Proxmox" />
+  <br />
+
+  <h2>Stepping Up with Proxmox</h2>
+  <br />
+
+  <p>
+    I finally took the plunge and installed Proxmox on the ASUS ROG. Instead
+    of transferring over the old Ubuntu Server, I felt the urge to start
+    fresh, giving me the opportunity to refine my setup. A key improvement
+    I’ve made is in the networking realm: I’ve established a Docker network
+    and assigned all my containers static IP addresses. This straightforward
+    change made a world of difference in streamlining my setup, especially
+    when interfacing with the Cloudflare tunnel. No more constant IP updates
+    after every reboot!
+  </p>
+  <img class="img" src="assets/Proxmox-Home-Screen2.jpeg" alt="Proxmox home screen" />
+  <h2>For the Gamers</h2>
+  <br />
+
+  <p>
+    To add a splash of fun to my home lab, I’ve spun up servers for "7 Days to
+    Die" and "GTA 5". Now, my friends and I have a dedicated playground for
+    our gaming sessions. It’s been a blast hosting these, and it’s just
+    another testament to what you can achieve with a home lab.
+  </p>
+  <img class="img" src="assets/Proxmox-7days-server2.jpeg" alt="Game server dashboard" />
+
+  <h2>Windows in My Home Lab? Yes!</h2>
+  <br />
+
+  <p>
+    While I’m a huge fan of open-source platforms, I must admit some
+    applications just feel more at home on Windows. So, I’ve allocated a slice
+    of my resources to a Windows 10 VM. It’s strictly business (okay, maybe a
+    little play), serving some applications that either only work on Windows
+    or just perform better on it.
+  </p>
+  <img class="img" src="assets/Proxmox-Windows102.jpeg" alt="Game server dashboard" />
+
+  <h2>The Versatility of VS Code Server</h2>
+  <br />
+  <p>
+    VS Code, the popular code editor from Microsoft, isn't just confined to
+    desktop environments. Using a linuxserver.io docker container I set up a
+    VS Code Server on my Ubuntu server. This has completely revolutionized the
+    way I work on projects!
+  </p>
+  <img class="img" src="assets/Vs-Code-Server2.jpeg" alt="VS Code Server UI on Ubuntu" />
+  <h2>Continuous Integration</h2>
+  <br />
+  <p>
+    After countless hours spent manually updating my website on the server,
+    I've come to a powerful realization: the importance of CI/CD (Continuous
+    Integration/Continuous Deployment) cannot be overstated. Driven by this
+    newfound understanding, I decided to leverage my recent experience with
+    Ansible to develop a webhook listener specifically for my website's GitHub
+    repository.
+  </p>
+  <br />
+  <p>
+    Here's how the workflow unfolds: Whenever I push changes to the main
+    branch of my GitHub repo, it automatically triggers GitHub to send a
+    notification to a server hosted on an Ansible LXC container within my
+    Proxmox setup. This server then executes an Ansible playbook designed to
+    clone the repo, run npm install, and restart the server—all in a seamless,
+    automated fashion.
+  </p>
+  <br />
+  <p>
+    What's truly remarkable is Ansible's intelligent decision-making
+    capabilities. For instance, it knows not to tamper with the .env file if
+    it hasn't been modified in the commit. This feature ensures that only the
+    altered files are updated, resulting in far more efficient deployments
+    that don't unnecessarily disrupt every component of the website.
+  </p>
+  <br />
+  <p>
+    The brilliance of incorporating Ansible into my CI workflow has been
+    nothing short of a revelation. While the initial setup required some
+    legwork, the scalability is astounding. With a simple copy-paste of the
+    code, a port number change, and the addition of a new webhook, I can
+    effortlessly extend this CI pipeline to as many services as I want.
+  </p>
+  <br />
+  <p>
+    I can't help but imagine the transformative impact this could have on
+    large corporations. They could automate and streamline the management of
+    multiple services that are in a state of constant evolution, thereby
+    saving countless hours of tedious, manual work. This is automation at its
+    finest, and I'm thrilled to be harnessing its power.
+  </p>
+  <br />
+
+  <h2>Proxmox and Raspberry Pi Clusters</h2>
+  <br />
+  <p>
+    Are you as captivated by clustering as I am? If so, you'll be excited to
+    hear about my latest project: setting up additional Proxmox nodes to
+    achieve high availability (HA). I've had my fair share of experience with
+    Kubernetes clusters, but they've been confined to virtual machines—until
+    now.
+  </p>
+  <br />
+  <p>
+    Taking inspiration from tech wizard Jeff Geerling, I've started exploring
+    the possibility of building a Raspberry Pi 4B cluster. While these nifty
+    devices aren't widely available just yet, the situation is improving
+    steadily. Soon, I hope to create a tangible, real-world cluster that
+    brings my networking dreams to life!
+  </p>
+  <br />
+  <p>
+    Now, you might wonder, why not virtualize my router using Proxmox and
+    repurpose my existing Raspberry Pi 4B router into another Proxmox node? It
+    sounds like a fantastic idea, but here's the catch: if my internet
+    connection fails for even a moment, I risk sparking a household mutiny!
+  </p>
+  <br />
+  <p>
+    So, as you can see, the journey toward clustering and high availability is
+    full of thrills and challenges. Stick around as I continue to share
+    updates on these exciting endeavors!
+  </p>
+
+  <h2>Latest Update - 11-15-2023</h2>
+  <p>
+    Exciting news in my homelab journey: I've set up a Proxmox cluster with two nodes, complemented by a Raspberry Pi 5
+    acting as a Q device for quorum. However, my trusty red 2014 HP laptop is showing its age, as the latest Proxmox
+    updates no longer support its USB for external drives and Ethernet adapters. I'm contemplating whether to keep
+    running the older Proxmox version or repurpose the laptop for another project like TrueNAS or Open Media Vault.
+    Meanwhile, my Proxmox cluster, hosting 3 Kubernetes nodes, ensures double high availability. This setup has been a
+    great learning experience, demonstrating how major corporations maintain uninterrupted online services.
+  </p>
+
+  <br />
+  <div id="contact-div">
+    <h2 id="quote-text">Learning every day.</h2>
+    <div id="contact-links">
+      <ul>
+        <li class="contact-link-id" id="youtube">
+          <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </li>
+        <li class="contact-link-id" id="github">
+          <a href="https://github.com/dominick253?tab=repositories">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="contact-link-id" id="freecodecamp">
+          <a href="https://www.freecodecamp.org/Dominick253">
+            <i class="fab fa-free-code-camp"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <script>
+    window.addEventListener("DOMContentLoaded", (event) => {
+      const clickableImages = document.querySelectorAll(".img");
+
+      clickableImages.forEach((image) => {
+        image.addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "block";
+          document.getElementById("overlay-image").src = this.src;
         });
       });
-    </script>
-  </body>
+
+      document
+        .getElementById("close-btn")
+        .addEventListener("click", function () {
+          document.getElementById("overlay").style.display = "none";
+        });
+
+      document.addEventListener("keydown", function (event) {
+        if (event.key === "Escape") {
+          document.getElementById("overlay").style.display = "none";
+        }
+      });
+    });
+  </script>
+</body>
+
 </html>

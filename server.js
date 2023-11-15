@@ -1,4 +1,4 @@
-//test
+
 const dotenv = require("dotenv");
 dotenv.config();
 
@@ -7,7 +7,7 @@ const bodyParser = require("body-parser");
 const socket = require("socket.io");
 const helmet = require("helmet");
 const portNum = 3000;
-const ipaddress = "10.71.71.115"; // 172.18.0.22   10.71.71.197  *********** Change me to 172.18.0.22 ip before going to actual server ****************
+const ipaddress = "10.71.71.115";
 const user = "adminer";
 const password = process.env.DB_PASSWORD;
 const path = require("path");
@@ -61,6 +61,7 @@ app.use(
         styleSrc: [
           "'self'",
           "maxcdn.bootstrapcdn.com",
+          "cdn.credly.com",
           "https://fonts.googleapis.com",
           "https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css",
           "'unsafe-inline'",
@@ -70,6 +71,7 @@ app.use(
           "'self'",
           "'unsafe-eval'",
           "cdnjs.cloudflare.com",
+          "cdn.credly.com",
           "'unsafe-inline'",
           "unpkg.com",
           "https://use.fontawesome.com",
@@ -77,14 +79,16 @@ app.use(
         ],
         fontSrc: [
           "'self'",
+          "cdn.credly.com",
           "https://fonts.gstatic.com",
           "https://use.fontawesome.com",
           "https://cdnjs.cloudflare.com",
         ],
-        imgSrc: ["'self'", "https://i.imgur.com", "blob:", "data:"],
+        imgSrc: ["'self'", "cdn.credly.com", "https://i.imgur.com", "blob:", "data:"],
         frameSrc: [
           "'self'",
           "https://www.youtube.com",
+          "https://www.credly.com",
           "https://www.youtube-nocookie.com",
         ],
         mediaSrc: ["'self'", "https://s3.amazonaws.com", "blob:", "data:"],

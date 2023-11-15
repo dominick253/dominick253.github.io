@@ -10,6 +10,7 @@ body {
   margin: 0;
   padding: 0;
   background-color: #222;
+  overflow-x: hidden;
 }
 
 h1,
@@ -506,7 +507,7 @@ hr {
 
 @keyframes slideFromRight {
   0% {
-    transform: translateX(400%);
+    transform: translateX(200%);
   }
 
   100% {
@@ -516,7 +517,7 @@ hr {
 
 @keyframes slideFromLeft {
   0% {
-    transform: translateX(-400%);
+    transform: translateX(-200%);
   }
 
   100% {
@@ -536,6 +537,7 @@ hr {
 @media only screen and (max-width: 768px) {
   main {
     padding: 10px;
+    overflow-x: hidden
   }
 
   p {
