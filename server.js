@@ -15,6 +15,8 @@ const app = express();
 const mysql = require("mysql2");
 const multer = require("multer");
 const fs = require("fs");
+const axios = require('axios');
+
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -57,7 +59,8 @@ app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
-        defaultSrc: ["'self'"],
+        defaultSrc: ["'self'", "https://10.71.71.43:8080", "http://10.71.71.43:8080"],
+        connectSrc: ["'self'", "https://10.71.71.43:8080", "http://10.71.71.43:8080", ],
         styleSrc: [
           "'self'",
           "maxcdn.bootstrapcdn.com",
@@ -111,7 +114,7 @@ app.use("/public", express.static(process.cwd() + "/public"));
 
 const rootDir = path.join(__dirname, "/");
 app.use(express.static(rootDir));
-app.use(express.json()); // for parsing application/json
+app.use(express.json()); 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -130,6 +133,9 @@ app.route("/videos").get(function (req, res) {
 });
 app.route("/files").get(function (req, res) {
   res.sendFile(process.cwd() + "/files.html");
+});
+app.route("/ai").get(function (req, res) {
+  res.sendFile(process.cwd() + "/ai.js");
 });
 
 // changed from connection to a pool and removed connection.connect
@@ -262,6 +268,25 @@ app.post("/guestbook", function (req, res) {
 
     res.send({ status: "success" });
   });
+});
+
+app.post('/chat', async (req, res) => {
+  try {
+    const userMessage = req.body.message;
+
+    // Replace with your actual local AI endpoint and model details
+    const aiResponse = await axios.post('http://10.71.71.43:8080/v1/chat/completions', {
+      model: "mistral-openorca",
+      messages: [{"role": "user", "content": userMessage}],
+      temperature: 0.9 
+    });
+
+    // Send back the AI's response
+    res.json(aiResponse.data);
+  } catch (error) {
+    console.error('Error communicating with the AI:', error);
+    res.status(500).send('Error communicating with the AI');
+  }
 });
 
 // 404 Not Found Middleware
