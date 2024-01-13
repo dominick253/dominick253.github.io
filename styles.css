@@ -32,12 +32,14 @@ li {
   max-width: 1200px;
   margin-left: auto;
   margin-right: auto;
-  padding-left: 0; /* Remove padding */
+  padding-left: 0;
+  /* Remove padding */
   list-style-position: inside;
 }
 
 .centered-list li {
-  margin-left: 0; /* Remove default left margin on li elements */
+  margin-left: 0;
+  /* Remove default left margin on li elements */
 }
 
 p {
@@ -112,6 +114,7 @@ img {
   width: 50%;
   margin-bottom: 10px;
 }
+
 #timer-div button {
   background-color: grey;
   color: white;
@@ -358,7 +361,7 @@ button:hover {
   background-color: #888;
 }
 
-#entries > div {
+#entries>div {
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -373,8 +376,10 @@ button:hover {
 
 hr {
   width: 100%;
-  border-top: 1px solid #ddd; /* Adjust color as needed */
-  margin: 10px 0; /* Add some vertical spacing */
+  border-top: 1px solid #ddd;
+  /* Adjust color as needed */
+  margin: 10px 0;
+  /* Add some vertical spacing */
 }
 
 #entries h2,
@@ -485,7 +490,8 @@ hr {
 
 #fileList {
   display: flex;
-  flex-wrap: wrap; /* Items will wrap to new lines if there's not enough space */
+  flex-wrap: wrap;
+  /* Items will wrap to new lines if there's not enough space */
   justify-content: center;
   width: 100%;
   list-style: none;
@@ -496,13 +502,44 @@ hr {
 
 #fileList li {
   padding-right: 10px;
-  flex: 0 0 calc(33.33% - 10px); /* Each list item will take up 33.33% of the container width with a small gap in between */
-  margin: 5px; /* Creates a small gap between list items */
+  flex: 0 0 calc(33.33% - 10px);
+  /* Each list item will take up 33.33% of the container width with a small gap in between */
+  margin: 5px;
+  /* Creates a small gap between list items */
   text-align: center;
 }
 
 #fileList img {
   width: 200px;
+}
+
+
+.chat-container {
+  display: flex;
+  width: 100vw;
+  height: 100vh;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+#chatbox {
+  width: 70vw;
+  height: 500px;
+  border: 1px solid #ddd;
+  overflow-y: scroll;
+  background-color: gray;
+}
+
+#userInput {
+  width: 70vw;
+  height: 30px;
+  margin-top: 10px;
+}
+
+#sendButton {
+  margin-top: 10px;
+  width: 100px;
 }
 
 @keyframes slideFromRight {
@@ -554,12 +591,15 @@ hr {
     width: 85vw;
     margin-left: auto;
     margin-right: auto;
-    padding-left: 0; /* Remove padding */
-    list-style-position: inside; /* To keep numbers or bullets inside the content box */
+    padding-left: 0;
+    /* Remove padding */
+    list-style-position: inside;
+    /* To keep numbers or bullets inside the content box */
   }
 
   .centered-list li {
-    margin-left: 0; /* Remove default left margin on li elements */
+    margin-left: 0;
+    /* Remove default left margin on li elements */
   }
 
   #name {
@@ -571,7 +611,7 @@ hr {
   }
 
   #guestbookForm,
-  #entries > div {
+  #entries>div {
     width: 90vw;
   }
 

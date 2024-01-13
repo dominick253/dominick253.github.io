@@ -40,7 +40,7 @@ io.on("connection", function (socket) {
 
   socket.on("disconnect", function () {
     console.log("A user disconnected");
-    io.emit("playerDisconnect", { id: socket.id }); 
+    io.emit("playerDisconnect", { id: socket.id });
   });
 });
 
@@ -60,7 +60,7 @@ app.use(
     contentSecurityPolicy: {
       directives: {
         defaultSrc: ["'self'", "https://10.71.71.43:8080", "http://10.71.71.43:8080"],
-        connectSrc: ["'self'", "https://10.71.71.43:8080", "http://10.71.71.43:8080", ],
+        connectSrc: ["'self'", "https://10.71.71.43:8080", "http://10.71.71.43:8080",],
         styleSrc: [
           "'self'",
           "maxcdn.bootstrapcdn.com",
@@ -114,7 +114,7 @@ app.use("/public", express.static(process.cwd() + "/public"));
 
 const rootDir = path.join(__dirname, "/");
 app.use(express.static(rootDir));
-app.use(express.json()); 
+app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
@@ -135,7 +135,7 @@ app.route("/files").get(function (req, res) {
   res.sendFile(process.cwd() + "/files.html");
 });
 app.route("/ai").get(function (req, res) {
-  res.sendFile(process.cwd() + "/ai.js");
+  res.sendFile(process.cwd() + "/ai.html");
 });
 
 // changed from connection to a pool and removed connection.connect
@@ -277,8 +277,8 @@ app.post('/chat', async (req, res) => {
     // Replace with your actual local AI endpoint and model details
     const aiResponse = await axios.post('http://10.71.71.43:8080/v1/chat/completions', {
       model: "mistral-openorca",
-      messages: [{"role": "user", "content": userMessage}],
-      temperature: 0.9 
+      messages: [{ "role": "user", "content": userMessage }],
+      temperature: 0.9
     });
 
     // Send back the AI's response
