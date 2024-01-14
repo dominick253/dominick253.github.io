@@ -1,81 +1,90 @@
+<!-- 
+ ____                                                __                  __      __          __                  __
+/\  _`\                       __          __        /\ \                /\ \  __/\ \        /\ \              __/\ \__
+\ \ \/\ \    ___     ___ ___ /\_\    ___ /\_\    ___\ \ \/'\     ____   \ \ \/\ \ \ \     __\ \ \____    ____/\_\ \ ,_\    __
+ \ \ \ \ \  / __`\ /' __` __`\/\ \ /' _ `\/\ \  /'___\ \ , <    /',__\   \ \ \ \ \ \ \  /'__`\ \ '__`\  /',__\/\ \ \ \/  /'__`\
+  \ \ \_\ \/\ \L\ \/\ \/\ \/\ \ \ \/\ \/\ \ \ \/\ \__/\ \ \\`\ /\__, `\   \ \ \_/ \_\ \/\  __/\ \ \L\ \/\__, `\ \ \ \ \_/\  __/
+   \ \____/\ \____/\ \_\ \_\ \_\ \_\ \_\ \_\ \_\ \____\\ \_\ \_\/\____/    \ `\___x___/\ \____\\ \_,__/\/\____/\ \_\ \__\ \____\
+    \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/\/_/\/_/\/____/ \/_/\/_/\/___/      '\/__//__/  \/____/ \/___/  \/___/  \/_/\/__/\/____/
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <title>Dominick Pescetto's Portfolio</title>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="\styles.css" />
-    <link
-      rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    />
-    <script src="/server.js" type="module"></script>
-  </head>
 
-  <header>
-    <div class="navbar">
-      <navbar id="navbar" class="nav">
-        <ul class="nav-links" attribute="no">
-          <li><a class="nav-list" href="/">Home</a></li>
-          <li><a class="nav-list" href="/projects">Projects</a></li>
-          <li><a class="nav-list" href="/videos">Videos</a></li>
-          <li><a class="nav-list" href="/files">Files</a></li>
-          <li><a class="nav-list" href="/homelab">Homelab</a></li>
-          <li><a class="nav-list" href="/ai">AI</a></li>
-          <li><a class="nav-list" href="#contact-div">Contact</a></li>
-        </ul>
-      </navbar>
-    </div>
-  </header>
+<head>
+  <meta charset="UTF-8" />
+  <title>Dominick Pescetto's Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="\styles.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" />
+  <!-- <script src="/server.js" type="module"></script> -->
+</head>
 
-  <body>
-    <main>
-      <div id="files-main">
-        <br />
-        <br />
-        <br />
-        <h1>File Server</h1>
+<header>
+  <div class="navbar">
+    <navbar id="navbar" class="nav">
+      <ul class="nav-links" attribute="no">
+        <li><a class="nav-list" href="/">Home</a></li>
+        <li><a class="nav-list" href="/projects">Projects</a></li>
+        <li><a class="nav-list" href="/videos">Videos</a></li>
+        <li><a class="nav-list" href="/files">Files</a></li>
+        <li><a class="nav-list" href="/homelab">Homelab</a></li>
+        <li><a class="nav-list" href="/ai">AI</a></li>
+        <li><a class="nav-list" href="#contact-div">Contact</a></li>
+      </ul>
+    </navbar>
+  </div>
+</header>
 
-        <br />
-        <h2>Upload a File</h2>
-        <div id="form-div">
-          <form id="upload-form">
-            <input type="file" id="file-input" />
-            <button class="file-button" id="upload-button" type="submit">
-              Upload
-            </button>
-          </form>
-        </div>
+<body>
+  <main>
+    <div id="files-main">
+      <br />
+      <br />
+      <br />
+      <h1>File Server</h1>
 
-        <br />
-        <br />
-        <h2>Download a File</h2>
-        <ul id="fileList"></ul>
-
-        <script src="files.js"></script>
+      <br />
+      <h2>Upload a File</h2>
+      <div id="form-div">
+        <form id="upload-form">
+          <input type="file" id="file-input" />
+          <button class="file-button" id="upload-button" type="submit">
+            Upload
+          </button>
+        </form>
       </div>
-    </main>
-    <div id="contact-div">
-      <h2 id="quote-text">Learning every day.</h2>
-      <div id="contact-links">
-        <ul>
-          <li class="contact-link-id" id="youtube">
-            <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
-              <i class="fab fa-youtube"></i>
-            </a>
-          </li>
-          <li class="contact-link-id" id="github">
-            <a href="https://github.com/dominick253?tab=repositories">
-              <i class="fab fa-github"></i>
-            </a>
-          </li>
-          <li class="contact-link-id" id="freecodecamp">
-            <a href="https://www.freecodecamp.org/Dominick253">
-              <i class="fab fa-free-code-camp"></i>
-            </a>
-          </li>
-        </ul>
-      </div>
+
+      <br />
+      <br />
+      <h2>Download a File</h2>
+      <ul id="fileList"></ul>
+
+      <script src="files.js"></script>
     </div>
-  </body>
+  </main>
+  <div id="contact-div">
+    <h2 id="quote-text">Learning every day.</h2>
+    <div id="contact-links">
+      <ul>
+        <li class="contact-link-id" id="youtube">
+          <a href="https://www.youtube.com/channel/UCLJ1DvfOket2VpfooqYVPmQ">
+            <i class="fab fa-youtube"></i>
+          </a>
+        </li>
+        <li class="contact-link-id" id="github">
+          <a href="https://github.com/dominick253?tab=repositories">
+            <i class="fab fa-github"></i>
+          </a>
+        </li>
+        <li class="contact-link-id" id="freecodecamp">
+          <a href="https://www.freecodecamp.org/Dominick253">
+            <i class="fab fa-free-code-camp"></i>
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+
 </html>

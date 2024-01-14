@@ -1,3 +1,11 @@
+//  ____                                                __                  __      __          __                  __
+//  /\  _`\                       __          __        /\ \                /\ \  __/\ \        /\ \              __/\ \__
+//  \ \ \/\ \    ___     ___ ___ /\_\    ___ /\_\    ___\ \ \/'\     ____   \ \ \/\ \ \ \     __\ \ \____    ____/\_\ \ ,_\    __
+//   \ \ \ \ \  / __`\ /' __` __`\/\ \ /' _ `\/\ \  /'___\ \ , <    /',__\   \ \ \ \ \ \ \  /'__`\ \ '__`\  /',__\/\ \ \ \/  /'__`\
+//    \ \ \_\ \/\ \L\ \/\ \/\ \/\ \ \ \/\ \/\ \ \ \/\ \__/\ \ \\`\ /\__, `\   \ \ \_/ \_\ \/\  __/\ \ \L\ \/\__, `\ \ \ \ \_/\  __/
+//     \ \____/\ \____/\ \_\ \_\ \_\ \_\ \_\ \_\ \_\ \____\\ \_\ \_\/\____/    \ `\___x___/\ \____\\ \_,__/\/\____/\ \_\ \__\ \____\
+//      \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/\/_/\/_/\/____/ \/_/\/_/\/___/      '\/__//__/  \/____/ \/___/  \/___/  \/_/\/__/\/____/
+
 document.addEventListener("DOMContentLoaded", (event) => {
   let workTime, restTime, intervals;
   let intervalId;
@@ -56,9 +64,8 @@ document.addEventListener("DOMContentLoaded", (event) => {
   function updateDisplay() {
     let minutes = Math.floor(timeLeft / 60);
     let seconds = timeLeft % 60;
-    document.getElementById("timerDisplay").textContent = `${minutes}:${
-      seconds < 10 ? "0" : ""
-    }${seconds}`;
+    document.getElementById("timerDisplay").textContent = `${minutes}:${seconds < 10 ? "0" : ""
+      }${seconds}`;
     document.getElementById("intervalDisplay").textContent = intervals;
   }
 

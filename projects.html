@@ -1,3 +1,13 @@
+<!-- 
+ ____                                                __                  __      __          __                  __
+/\  _`\                       __          __        /\ \                /\ \  __/\ \        /\ \              __/\ \__
+\ \ \/\ \    ___     ___ ___ /\_\    ___ /\_\    ___\ \ \/'\     ____   \ \ \/\ \ \ \     __\ \ \____    ____/\_\ \ ,_\    __
+ \ \ \ \ \  / __`\ /' __` __`\/\ \ /' _ `\/\ \  /'___\ \ , <    /',__\   \ \ \ \ \ \ \  /'__`\ \ '__`\  /',__\/\ \ \ \/  /'__`\
+  \ \ \_\ \/\ \L\ \/\ \/\ \/\ \ \ \/\ \/\ \ \ \/\ \__/\ \ \\`\ /\__, `\   \ \ \_/ \_\ \/\  __/\ \ \L\ \/\__, `\ \ \ \ \_/\  __/
+   \ \____/\ \____/\ \_\ \_\ \_\ \_\ \_\ \_\ \_\ \____\\ \_\ \_\/\____/    \ `\___x___/\ \____\\ \_,__/\/\____/\ \_\ \__\ \____\
+    \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/\/_/\/_/\/____/ \/_/\/_/\/___/      '\/__//__/  \/____/ \/___/  \/___/  \/_/\/__/\/____/
+ -->
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -14,7 +24,7 @@
 
     <script src="./game.mjs" type="module"></script>
     <script src="./Player.mjs" type="module"></script>
-    <script src="/server.js" type="module"></script>
+    <!-- <script src="/server.js" type="module"></script> -->
 
     <script>
         var socket = io();
@@ -69,143 +79,143 @@
 
             return (
                 <div id="cal-par">
-                <div className="App">
-                    <div className="calculator">
-                        <div className="display" id="display">
-                            {calculation || "0"}
-                        </div>
-                        <button id="del" onClick={deleteLast}>
-                            DEL
-                        </button>
-                        <button id="clear" onClick={clearAll}>
-                            AC
-                        </button>
-                        <button
-                            id="add"
-                            onClick={() => {
-                                updateCalculator("+");
-                            }}
-                        >
-                            +
-                        </button>
-                        <button
-                            id="subtract"
-                            onClick={() => {
-                                updateCalculator("-");
-                            }}
-                        >
-                            -
-                        </button>
-
-                        <button
-                            id="one"
-                            onClick={() => {
-                                updateCalculator("1");
-                            }}
-                        >
-                            1
-                        </button>
-                        <button
-                            id="two"
-                            onClick={() => {
-                                updateCalculator("2");
-                            }}
-                        >
-                            2
-                        </button>
-                        <button
-                            id="three"
-                            onClick={() => {
-                                updateCalculator("3");
-                            }}
-                        >
-                            3
-                        </button>
-                        <button
-                            id="multiply"
-                            onClick={() => {
-                                updateCalculator("*");
-                            }}
-                        >
-                            *
-                        </button>
-                        <button
-                            id="four"
-                            onClick={() => {
-                                updateCalculator("4");
-                            }}
-                        >
-                            4
-                        </button>
-                        <button
-                            id="five"
-                            onClick={() => {
-                                updateCalculator("5");
-                            }}
-                        >
-                            5
-                        </button>
-                        <button
-                            id="six"
-                            onClick={() => {
-                                updateCalculator("6");
-                            }}
-                        >
-                            6
-                        </button>
-                        <button
-                            id="divide"
-                            onClick={() => {
-                                updateCalculator("/");
-                            }}
-                        >
-                            /
-                        </button>
-                        <button
-                            id="seven"
-                            onClick={() => {
-                                updateCalculator("7");
-                            }}
-                        >
-                            7
-                        </button>
-                        <button
-                            id="eight"
-                            onClick={() => {
-                                updateCalculator("8");
-                            }}
-                        >
-                            8
-                        </button>
-                        <button
-                            id="nine"
-                            onClick={() => {
-                                updateCalculator("9");
-                            }}
-                        >
-                            9
-                        </button>
-                        <button
-                            id="zero"
-                            onClick={() => {
-                                updateCalculator("0");
-                            }}
-                        >
-                            0
-                        </button>
-                        <button
-                            id="decimal"
-                            onClick={() => {
-                                updateCalculator(".");
-                            }}
+                    <div className="App">
+                        <div className="calculator">
+                            <div className="display" id="display">
+                                {calculation || "0"}
+                            </div>
+                            <button id="del" onClick={deleteLast}>
+                                DEL
+                            </button>
+                            <button id="clear" onClick={clearAll}>
+                                AC
+                            </button>
+                            <button
+                                id="add"
+                                onClick={() => {
+                                    updateCalculator("+");
+                                }}
                             >
-                            .
-                        </button>
-                        <button id="equals" onClick={calculate}>
-                            =
-                        </button>
+                                +
+                            </button>
+                            <button
+                                id="subtract"
+                                onClick={() => {
+                                    updateCalculator("-");
+                                }}
+                            >
+                                -
+                            </button>
+
+                            <button
+                                id="one"
+                                onClick={() => {
+                                    updateCalculator("1");
+                                }}
+                            >
+                                1
+                            </button>
+                            <button
+                                id="two"
+                                onClick={() => {
+                                    updateCalculator("2");
+                                }}
+                            >
+                                2
+                            </button>
+                            <button
+                                id="three"
+                                onClick={() => {
+                                    updateCalculator("3");
+                                }}
+                            >
+                                3
+                            </button>
+                            <button
+                                id="multiply"
+                                onClick={() => {
+                                    updateCalculator("*");
+                                }}
+                            >
+                                *
+                            </button>
+                            <button
+                                id="four"
+                                onClick={() => {
+                                    updateCalculator("4");
+                                }}
+                            >
+                                4
+                            </button>
+                            <button
+                                id="five"
+                                onClick={() => {
+                                    updateCalculator("5");
+                                }}
+                            >
+                                5
+                            </button>
+                            <button
+                                id="six"
+                                onClick={() => {
+                                    updateCalculator("6");
+                                }}
+                            >
+                                6
+                            </button>
+                            <button
+                                id="divide"
+                                onClick={() => {
+                                    updateCalculator("/");
+                                }}
+                            >
+                                /
+                            </button>
+                            <button
+                                id="seven"
+                                onClick={() => {
+                                    updateCalculator("7");
+                                }}
+                            >
+                                7
+                            </button>
+                            <button
+                                id="eight"
+                                onClick={() => {
+                                    updateCalculator("8");
+                                }}
+                            >
+                                8
+                            </button>
+                            <button
+                                id="nine"
+                                onClick={() => {
+                                    updateCalculator("9");
+                                }}
+                            >
+                                9
+                            </button>
+                            <button
+                                id="zero"
+                                onClick={() => {
+                                    updateCalculator("0");
+                                }}
+                            >
+                                0
+                            </button>
+                            <button
+                                id="decimal"
+                                onClick={() => {
+                                    updateCalculator(".");
+                                }}
+                            >
+                                .
+                            </button>
+                            <button id="equals" onClick={calculate}>
+                                =
+                            </button>
+                        </div>
                     </div>
-                </div>
                 </div>
             );
         }
@@ -237,7 +247,7 @@
         <br>
         <br>
         <h1 id="h2-project">Coding Projects</h1>
-        
+
         <br>
         <br>
         <h2>Workout Timer</h2>
@@ -247,14 +257,14 @@
             <input id="restTime" type="number" placeholder="Rest Time (seconds)">
             <input id="intervals" type="number" placeholder="Intervals">
             <div>
-            <button id="startButton">Start</button>
-            <button id="stopButton">Stop</button>
+                <button id="startButton">Start</button>
+                <button id="stopButton">Stop</button>
             </div>
             <p>Time Left</p>
             <p id="timerDisplay">00:00</p>
             <p>Intervals Left</p>
             <p id="intervalDisplay">0</p>
-            
+
         </div>
         <script src="timer.js"></script>
 
@@ -262,7 +272,7 @@
         <br>
         <h2>React Calculator</h2>
 
-    <div id="root"></div>
+        <div id="root"></div>
         <br>
         <br>
         <h2>Secure Real Time Multiplayer Game</h2>
@@ -282,38 +292,38 @@
         <br>
         <br>
         <a href="https://codepen.io/dominick253/pen/abajwBx">
-            <h1 class="drum-ref" >Drum Machine</h1>
+            <h1 class="drum-ref">Drum Machine</h1>
         </a>
         <br>
         <br>
 
         <div class="drum">
 
-            <button type="button" class="drum-pad" id="heater-1" >Q
+            <button type="button" class="drum-pad" id="heater-1">Q
                 <audio class="clip" id="Q" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-1.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-2" >W
+            <button type="button" class="drum-pad" id="heater-2">W
                 <audio class="clip" id="W" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-2.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-3" >E
+            <button type="button" class="drum-pad" id="heater-3">E
                 <audio class="clip" id="E" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-3.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-4" >A
+            <button type="button" class="drum-pad" id="heater-4">A
                 <audio class="clip" id="A" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-4_1.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-5" >S
+            <button type="button" class="drum-pad" id="heater-5">S
                 <audio class="clip" id="S" src="https://s3.amazonaws.com/freecodecamp/drums/Heater-6.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-6" >D
+            <button type="button" class="drum-pad" id="heater-6">D
                 <audio class="clip" id="D" src="https://s3.amazonaws.com/freecodecamp/drums/Dsc_Oh.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-7" >Z
+            <button type="button" class="drum-pad" id="heater-7">Z
                 <audio class="clip" id="Z" src="https://s3.amazonaws.com/freecodecamp/drums/Kick_n_Hat.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-8" >X
+            <button type="button" class="drum-pad" id="heater-8">X
                 <audio class="clip" id="X" src="https://s3.amazonaws.com/freecodecamp/drums/RP4_KICK_1.mp3"></audio>
             </button>
-            <button type="button" class="drum-pad" id="heater-9" >C
+            <button type="button" class="drum-pad" id="heater-9">C
                 <audio class="clip" id="C" src="https://s3.amazonaws.com/freecodecamp/drums/Cev_H2.mp3"></audio>
             </button>
 
@@ -377,7 +387,7 @@
                     </li>
                 </ul>
             </div>
-        
+
     </main>
 </body>
 
