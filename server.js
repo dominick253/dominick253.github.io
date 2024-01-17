@@ -285,7 +285,7 @@ app.post('/chat', async (req, res) => {
 
     // Replace with your actual local AI endpoint and model details
     const aiResponse = await axios.post('http://10.71.71.43:8080/v1/chat/completions', {
-      model: "mistral-openorca",
+      model: "mistral.gguf",
       messages: [{ "role": "user", "content": userMessage }],
       temperature: 0.9
     });
