@@ -1,12 +1,10 @@
-
-//  ____                                                __                  __      __          __                  __
+//   ____                                                __                  __      __          __                  __
 //  /\  _`\                       __          __        /\ \                /\ \  __/\ \        /\ \              __/\ \__
 //  \ \ \/\ \    ___     ___ ___ /\_\    ___ /\_\    ___\ \ \/'\     ____   \ \ \/\ \ \ \     __\ \ \____    ____/\_\ \ ,_\    __
 //   \ \ \ \ \  / __`\ /' __` __`\/\ \ /' _ `\/\ \  /'___\ \ , <    /',__\   \ \ \ \ \ \ \  /'__`\ \ '__`\  /',__\/\ \ \ \/  /'__`\
 //    \ \ \_\ \/\ \L\ \/\ \/\ \/\ \ \ \/\ \/\ \ \ \/\ \__/\ \ \\`\ /\__, `\   \ \ \_/ \_\ \/\  __/\ \ \L\ \/\__, `\ \ \ \ \_/\  __/
 //     \ \____/\ \____/\ \_\ \_\ \_\ \_\ \_\ \_\ \_\ \____\\ \_\ \_\/\____/    \ `\___x___/\ \____\\ \_,__/\/\____/\ \_\ \__\ \____\
 //      \/___/  \/___/  \/_/\/_/\/_/\/_/\/_/\/_/\/_/\/____/ \/_/\/_/\/___/      '\/__//__/  \/____/ \/___/  \/___/  \/_/\/__/\/____/
-
 
 const dotenv = require("dotenv");
 dotenv.config();
@@ -24,8 +22,7 @@ const app = express();
 const mysql = require("mysql2");
 const multer = require("multer");
 const fs = require("fs");
-const axios = require('axios');
-
+const axios = require("axios");
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -39,7 +36,20 @@ const storage = multer.diskStorage({
   },
 });
 
-const upload = multer({ storage: storage });
+// File filter to check if file is an image
+const imageFilter = (req, file, cb) => {
+  if (file.mimetype.startsWith('image/')) {
+    cb(null, true);
+  } else {
+    cb(new Error('Not an image! Please upload only images.'), false);
+  }
+};
+
+const upload = multer({
+  storage: storage,
+  fileFilter: imageFilter
+});
+
 const server = require("http").Server(app);
 const io = socket(server);
 
@@ -68,8 +78,16 @@ app.use(
   helmet({
     contentSecurityPolicy: {
       directives: {
-        defaultSrc: ["'self'", "https://10.71.71.43:8080", "http://10.71.71.43:8080"],
-        connectSrc: ["'self'", "https://10.71.71.43:8080", "http://10.71.71.43:8080",],
+        defaultSrc: [
+          "'self'",
+          "https://10.71.71.43:8080",
+          "http://10.71.71.43:8080",
+        ],
+        connectSrc: [
+          "'self'",
+          "https://10.71.71.43:8080",
+          "http://10.71.71.43:8080",
+        ],
         styleSrc: [
           "'self'",
           "maxcdn.bootstrapcdn.com",
@@ -96,7 +114,13 @@ app.use(
           "https://use.fontawesome.com",
           "https://cdnjs.cloudflare.com",
         ],
-        imgSrc: ["'self'", "cdn.credly.com", "https://i.imgur.com", "blob:", "data:"],
+        imgSrc: [
+          "'self'",
+          "cdn.credly.com",
+          "https://i.imgur.com",
+          "blob:",
+          "data:",
+        ],
         frameSrc: [
           "'self'",
           "https://www.youtube.com",
@@ -155,7 +179,6 @@ const connection = mysql.createPool({
   database: "files",
   connectionLimit: 10,
 });
-
 
 // Route to handle file upload
 app.post("/upload", upload.single("file"), (req, res) => {
@@ -279,22 +302,25 @@ app.post("/guestbook", function (req, res) {
   });
 });
 
-app.post('/chat', async (req, res) => {
+app.post("/chat", async (req, res) => {
   try {
     const userMessage = req.body.message;
 
-    // Replace with your actual local AI endpoint and model details
-    const aiResponse = await axios.post('http://10.71.71.43:8080/v1/chat/completions', {
-      model: "mistral.gguf",
-      messages: [{ "role": "user", "content": userMessage }],
-      temperature: 0.9
-    });
+    const aiResponse = await axios.post(
+      "http://10.71.71.43:8080/v1/chat/completions",
+      {
+        model: "phi.gguf",
+        messages: [{ role: "user", content: userMessage }],
+        max_tokens: 200,
+        temperature: 0.7,
+      }
+    );
 
     // Send back the AI's response
     res.json(aiResponse.data);
   } catch (error) {
-    console.error('Error communicating with the AI:', error);
-    res.status(500).send('Error communicating with the AI');
+    console.error("Error communicating with the AI:", error);
+    res.status(500).send("Error communicating with the AI");
   }
 });
 
@@ -306,17 +332,6 @@ app.use(function (req, res, next) {
 // Set up server and tests
 server.listen(portNum, () => {
   console.log(`Listening on port ${portNum}`);
-  if (process.env.NODE_ENV === "test") {
-    console.log("Running Tests...");
-    setTimeout(function () {
-      try {
-        runner.run();
-      } catch (error) {
-        console.log("Tests are not valid:");
-        console.error(error);
-      }
-    }, 1500);
-  }
 });
 
 module.exports = app; // For testing
