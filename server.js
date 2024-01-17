@@ -309,9 +309,8 @@ app.post("/chat", async (req, res) => {
     const aiResponse = await axios.post(
       "http://10.71.71.43:8080/v1/chat/completions",
       {
-        model: "phi.gguf",
+        model: "phi-2",
         messages: [{ role: "user", content: userMessage }],
-        max_tokens: 200,
         temperature: 0.7,
       }
     );
