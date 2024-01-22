@@ -66,7 +66,7 @@ io.on("connection", function (socket) {
 app.use((req, res, next) => {
   if (req.path.includes('.git')) {
     console.log(`Blocked access to: ${req.path}`);
-    res.status(403).send('Access Denied');
+    res.status(403).sendFile(path.join(__dirname, 'no.html'));
   } else {
     next();
   }
