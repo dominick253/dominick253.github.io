@@ -64,6 +64,15 @@ io.on("connection", function (socket) {
 });
 
 app.use((req, res, next) => {
+  if (req.path.includes('.git')) {
+    console.log(`Blocked access to: ${req.path}`);
+    res.status(403).send('Access Denied');
+  } else {
+    next();
+  }
+});
+
+app.use((req, res, next) => {
   res.setHeader("Surrogate-Control", "no-store");
   res.setHeader(
     "Cache-Control",
