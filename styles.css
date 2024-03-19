@@ -102,6 +102,13 @@
    cursor: pointer;
  }
 
+/* mandebrot set styling */
+#mandelbrotCanvas {
+  display: block;
+}
+
+
+
  /* timer styling  */
  #timer-div {
    display: flex;
