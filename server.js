@@ -8,7 +8,6 @@
 
 const dotenv = require("dotenv");
 dotenv.config();
-
 const express = require("express");
 const bodyParser = require("body-parser");
 const socket = require("socket.io");
@@ -23,6 +22,27 @@ const mysql = require("mysql2");
 const multer = require("multer");
 const fs = require("fs");
 const axios = require("axios");
+const server = require("http").Server(app);
+const io = socket(server);
+
+const connection = mysql.createPool({
+  host: ipaddress,
+  user: user,
+  password: password,
+  database: "files",
+  connectionLimit: 20,
+});
+
+connection.on("connection", function (connection) {
+  console.log("DB Connection established");
+
+  connection.on("error", function (err) {
+    console.error(new Date(), "MySQL error", err.code);
+  });
+  connection.on("close", function (err) {
+    console.error(new Date(), "MySQL close", err);
+  });
+});
 
 const storage = multer.diskStorage({
   destination: function (req, file, cb) {
@@ -36,22 +56,18 @@ const storage = multer.diskStorage({
   },
 });
 
-// File filter to check if file is an image
 const imageFilter = (req, file, cb) => {
-  if (file.mimetype.startsWith('image/')) {
+  if (file.mimetype.startsWith("image/")) {
     cb(null, true);
   } else {
-    cb(new Error('Not an image! Please upload only images.'), false);
+    cb(new Error("Not an image! Please upload only images."), false);
   }
 };
 
 const upload = multer({
   storage: storage,
-  fileFilter: imageFilter
+  fileFilter: imageFilter,
 });
-
-const server = require("http").Server(app);
-const io = socket(server);
 
 io.on("connection", function (socket) {
   console.log("A user connected");
@@ -63,14 +79,14 @@ io.on("connection", function (socket) {
   });
 });
 
-app.use((req, res, next) => {
-  if (req.path.includes('.git')) {
-    console.log(`Blocked access to: ${req.path}`);
-    res.status(403).sendFile(path.join(__dirname, 'no.html'));
-  } else {
-    next();
-  }
-});
+// app.use((req, res, next) => {
+//   if (req.path.includes(".git") || req.path.includes("no")) {
+//     console.log(`Blocked access to: ${req.path}`);
+//     res.status(403).sendFile(path.join(__dirname, "no.html"));
+//   } else {
+//     next();
+//   }
+// });
 
 app.use((req, res, next) => {
   res.setHeader("Surrogate-Control", "no-store");
@@ -160,9 +176,21 @@ app.use(express.json());
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: true }));
 
-// Index page (static HTML)
 app.route("/").get(function (req, res) {
   res.sendFile(process.cwd() + "/index.html");
+});
+app.route("/viewCount").get(function (req, res) {
+  connection.query("INSERT INTO views () VALUES (NULL)");
+  connection.query(
+    "SELECT COUNT(*) AS viewCount FROM views",
+    function (error, results, fields) {
+      if (error) {
+        console.error(error);
+        throw error;
+      }
+      res.json({ viewCount: results[0].viewCount });
+    }
+  );
 });
 app.route("/homelab").get(function (req, res) {
   res.sendFile(process.cwd() + "/homelab.html");
@@ -178,15 +206,6 @@ app.route("/files").get(function (req, res) {
 });
 app.route("/ai").get(function (req, res) {
   res.sendFile(process.cwd() + "/ai.html");
-});
-
-// changed from connection to a pool and removed connection.connect
-const connection = mysql.createPool({
-  host: ipaddress,
-  user: user,
-  password: password,
-  database: "files",
-  connectionLimit: 10,
 });
 
 // Route to handle file upload
@@ -333,8 +352,13 @@ app.post("/chat", async (req, res) => {
 });
 
 // 404 Not Found Middleware
-app.use(function (req, res, next) {
-  res.status(404).type("text").send("Not Found");
+// app.use(function (req, res, next) {
+//   res.status(404).type("text").send("Not Found");
+// });
+// Catch-all handler
+app.use((req, res) => {
+  console.log(`Blocked access to: ${req.path}`);
+  res.status(404).sendFile(path.join(__dirname, "no.html"));
 });
 
 // Set up server and tests

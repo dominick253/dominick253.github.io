@@ -120,6 +120,21 @@
       // Initial load of entries
       loadEntries();
     </script>
+    <!-- <br /> -->
+    <div id="viewCountDiv">
+      <h1 id="viewCount"></h1>
+    <!-- </div> -->
+      <br />
+    <script>
+      window.onload = function () {
+        fetch('/viewCount')
+          .then(response => response.json())
+          .then(data => {
+            document.getElementById('viewCount').textContent = "Page View Count: " + data.viewCount;
+          });
+      }
+    </script>
+
   </main>
   <div id="contact-div">
     <h2 id="quote-text">Learning every day.</h2>

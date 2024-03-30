@@ -64,6 +64,20 @@
    color: #ddd;
  }
 
+ #viewCountDiv {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+    margin-bottom: 20px;
+ }
+ #viewCount {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #1b52b9;
+ }
+
  img {
    display: block;
    margin: 0 auto;
